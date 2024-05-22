@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!--------------Css custome file-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleNavigationbar.css">
+    <link rel="stylesheet" href="styletabs.css">
+    <!-------------Bootstrap Css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-------------Bootstrap cdn icon -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!---------Fontawsome cdn icon--->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="images/favicon.svg" rel="icon"/>
+     <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl bg-body-tertiary shadow">
+            <div class="container">
+              <a class="navbar-brand" href="index.html">
+                    <img src="images/payjet-Logo.svg" alt="" width="60">
+                    <img src="images/logo-text-nav.svg" alt="" width="100">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="dashboard.html">
+                        <img src="images/dashboard-icon.svg" alt="dashboard-icon-error">
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Epos-settlement.html">Epos Settlement</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Report
+                    </a>
+                    <ul class="dropdown-menu mega-menu dropdown-menu-dark">
+                      <div class="row">
+                         <div class="col-lg p-0">
+                          <img src="images/dropdown-img.svg" alt="" class="mega-menu-img" >
+                         </div>
+                         <div class="col-md p-0">
+                           <h4 class="dropdown-header px-3">Reports</h4>
+                          <li><a class="dropdown-item" href="recharge_Report.html">Recharge Report</a></li>
+                          <li><a class="dropdown-item" href="searchRecharge_Report.html">Search Recharge</a></li>
+                          <li><a class="dropdown-item" href="fastag_Report.html">Fastag Recharges</a></li>
+                          <li><a class="dropdown-item" href="dmt_Report.html">DMT Report</a></li>
+                          <li><a class="dropdown-item" href="dmt_Transaction.html">DMT Transaction Search</a></li>
+                          <li><a class="dropdown-item" href="DMT-KYC_report.html">DMT-KYC Report</a></li>
+                         </div>
+                         <div class="col-lg p-0">
+                          <h5 class="dropdown-header1 px-3">Reports</h5>
+                          <li><a class="dropdown-item" href="creditCardBill_Report.html">Credit Card Bill Payment</a></li>
+                          <li><a class="dropdown-item" href="apesXpress_Report.html">Aeps Xpress</a></li>
+                          <li><a class="dropdown-item" href="aepsTez_Report.html">Aeps Tez</a></li>
+                          <li><a class="dropdown-item" href="aepsICIC_report.html">Aeps ICICI</a></li>
+                          <li><a class="dropdown-item" href="aadharPay_report.html">Aadhar Pay</a></li>
+                          <li><a class="dropdown-item" href="insurance_Report.html">Insurance</a></li>
+                         </div>
+                         <div class="col-lg p-0">
+                          <h4 class="dropdown-header1 px-3">Reports</h4>
+                          <li><a class="dropdown-item" href="billPayment_report.html">Bill Payment</a></li>
+                          <li><a class="dropdown-item" href="account_Report.html">Account Report</a></li>
+                          <li><a class="dropdown-item" href="balanceTopup_report.html">Balance TopUp History</a></li>
+                          <li><a class="dropdown-item" href="bankList_report.html">Bank List</a></li>
+                          <li><a class="dropdown-item" href="paymentWithdral_report.html">Payment Withdrawal</a></li>
+                          <li><a class="dropdown-item" href="CMSbill_report.html">CMS Bill</a></li>
+                         </div>
+                         <div class="col-lg p-0">
+                          <h4 class="dropdown-header1 px-3">Reports</h4>
+                          <li><a class="dropdown-item" href="paymentGateway_report.html">Postpaid Bill Transaction</a></li>
+                          <li><a class="dropdown-item" href="EposPending_report.html">EPOS Pending Transaction</a></li>
+                          <li><a class="dropdown-item" href="turboEpayment_report.html">Turbo E Payment Request</a></li>
+                          <li><a class="dropdown-item" href="rupayCard_report.html">Rupay Card</a></li>
+                          <li><a class="dropdown-item" href="paymentGateway_report.html">Payment Gateway</a></li>
+                         </div>
+                      </div>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="complain.html">Complain</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="payout.html">Payout</a>
+                  </li>
+                </ul>
+                <div class="wallet-header">
+                    <div class="select">
+                      <div class="selectBtn" data-type="firstOption">
+                         <img src="images/wallet-nav.svg" alt="" class="mb-1">
+                          <span class="wallet">Wallet</span> <span class="wallet-amount">₹14.12</span>
+                      </div>
+                      <div class="selectDropdown">
+                        <div class="option border-bottom" data-type="firstOption"><a href="creditcard.html">Credit Card</a></div>
+                        <div class="option border-bottom" data-type="secondOption"><a href="debitcard.html">Debit Card</a></div>
+                        <div class="option" data-type="thirdOption"><a href="pro-paymentgtway.html">Payment Wallet</a></div>
+                      </div>
+                    </div>
+                  </div> 
+                  <!-- <div class="scanner me-3">
+                    <i class="bi bi-qr-code fs-2"></i>
+                  </div> -->
+                  <div class="qr-code">
+                    <div type="button" class="me-2" data-bs-toggle="modal" data-bs-target="#exampleModalscanner">
+                        <i class="bi bi-qr-code fs-2"></i>
+                    </div>
+                    <!-- Modal -->
+                  </div>
+                  <div class="Emi-calculator ms-2">
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalEmi">
+                       <img src="images/emi-calculator.svg" alt="" class="mb-1"> <span class="emi-text">EMI Calculator</span>
+                    </button>
+                  </div> 
+                  <nav>
+                    <div class="menu-toggle1"></div>
+                    <div class="profile">
+                      <div class="img-box">
+                        <i class="bi bi-person-circle fs-2 px-2"></i>
+                      </div>
+                    </div>
+                    <div class="menu">
+                      <ul>
+                        <li><a href="profile.html"><i class="fa-solid fa-user"></i>&nbsp;Profile</a></li>
+                        <li><a href="passwordChange.html"><i class="fa-solid fa-key"></i>&nbsp;Password Change</a></li>
+                        <li><a href="createTpin.html"><i class="fa-solid fa-user-lock"></i>&nbsp;Create Tpin</a></li>
+                        <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+              </div>
+            </div>
+          </nav>
+       </header>
+  <marquee behavior="" direction="" class="py-1">
+    <i class="bi bi-record-circle-fill"></i>
+    Join PayJet as a Financial Advisor. Be a part of a large and growing family of
+    25,000+ partners
+    <i class="bi bi-record-circle-fill"></i>
+    Partner with PayJet and get closer to financial freedom
+    <i class="bi bi-record-circle-fill"></i>
+    Join PayJet as a Financial Advisor. Be a part of a large and growing family of
+    25,000+ partners
+    <i class="bi bi-record-circle-fill"></i>
+    Partner with PayJet and get closer to financial freedom
+  </marquee>
+    <!--================================== header End Navigationbar=========================== -->
+   
+     <!-- Dashboard being--->
+          <div class="container">
+             <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-2">
+                    <div class="card p-2 border-0 shadow-sm h-100" style=" background: linear-gradient(94.12deg, #39BE3E 0.37%, #29974F 100.14%);">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <img src="images/1stcrd.svg" alt="">
+                            </div>
+                            <div class="col-md-9">
+                                <p class="text-white">FUNDS RECEIVED</p>
+                                <h5 class="text-white">₹ 121275.00</h5>
+                            </div> 
+                        </div>     
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-2">
+                    <div class="card p-2 border-0 shadow-sm" style="background: linear-gradient(90.65deg, #e4ade7 0.56%, #7d017b 99.76%);">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <img src="images/2ndcrd.png" alt="">
+                            </div>
+                            <div class="col-md-9">
+                                <p class="text-white">TRANSACTION VOLUME</p>
+                                <h5 class="text-white">
+                                    ₹ 121278
+                                </h5>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-2">
+                    <div class="card p-2 border-0 shadow-sm" style="background: linear-gradient(90.65deg, #FF7A2F 0.56%, #C15315 99.76%);">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <img src="images/3crd.svg" alt="">
+                            </div>
+                            <div class="col-md-9">
+                                <p class="text-white">PENDING TRANSACTION</p>
+                                <h5 class="text-white">₹ 121278</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-2">
+                    <div class="card p-2 border-0 shadow-sm" style="background: linear-gradient(90.65deg, #f4e4f5 0.56%, #7d017b 99.76%);">
+                        <div class="row">
+                            <div class="col-md-3 align-self-center">
+                                <img src="images/4crd.svg" alt="">
+                            </div>
+                            <div class="col-md-9">
+                                <p class="text-white">COMMISSION EARNED</p>
+                                <h5 class="text-white">₹ 00</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div class="row mt-4">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-3 mt-2">
+                    <div class="card p-2 shadow-sm border h-100 border-0">
+                        <div class="container mt-4 text-center">
+                            <img src="images/Avatar.svg" alt="">
+                            <h4>Finasure Solutions</h4>
+                            <p>IM-R-041080</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p style="font-size: 11px;">PREPAID BALANCE</p>
+                                    <h6>₹ 13.6</h6>
+                                </div>
+                                <div class="col-md-6">
+                                    <p style="font-size: 11px;">POSTPAID BALANCE</p>
+                                    <h6>₹ 2125.72</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-12 col-md-8 col-lg-8 col-xl-6 mt-2">
+                    <div class="card p-3 h-100 border-0 shadow-sm">
+                        <div>
+                            <h4 class="mb-3">
+                                <b>Customer Growth</b>
+                            </h4>
+                            <canvas id="myChart" style="width:100%; max-width:100%"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-12 col-xl-3 mt-2">
+                    <div class="card h-100 p-3 border-0 shadow-sm">
+                        <h4>
+                            <b>News & Alerts</b>
+                        </h4>
+                        <h6 class="mt-3">
+                            <span style="border-left: 3px solid rgba(255, 122, 47, 1);">
+                                <b class="mx-2">Dear User,</b>
+                            </span>
+                        </h6>
+                        <span style="font-size: 12px;">Be Aware - Never share your Password/One time
+                            Password (OTP) with anyone PayJet do not ask for OTP for any transaction.</span>
+                        <h6 class="mt-3">
+                            <span style="border-left: 3px solid rgba(255, 122, 47, 1);">
+                                <b class="mx-2">User 01,
+                                </b>
+                            </span>
+                        </h6>
+                        <span style="font-size: 12px;">Be Aware - Never share your Password/One time
+                            Password (OTP) with anyone PayJet do not ask for OTP for any transaction.</span>
+                        <h6 class="mt-3">
+                            <span style="border-left: 3px solid rgba(255, 122, 47, 1);">
+                                <b class="mx-2">User 02,
+                                </b>
+                            </span>
+                        </h6>
+                        <span style="font-size: 12px;">Be Aware - Never share your Password/One time
+                            Password (OTP) with anyone PayJet do not ask for OTP for any transaction.</span>
+                    </div>
+                </div>
+             </div>
+             <div class="row my-3">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-8 mt-2">
+                     <div class="card p-3 border-0 shadow-sm">
+                         <div class="table-responsive">
+                             <div class="table">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Wallet</th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>
+                                                    <b>12-03-2024</b>
+                                                </span>
+                                                <p>Tuesday, 02:23pm</p>
+                                            </th>
+                                            <td class="align-content-center">Prepaid</td>
+                                            <td class="align-content-center">Payout</td>
+                                            <td class="align-content-center">
+                                                <p class="bg-success-subtle rounded-4 text-center w-100 text-success">Success</p>
+                                            </td>
+                                            <td class="align-content-center">Rs. 50024</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>
+                                                    <b>12-03-2024</b>
+                                                </span>
+                                                <p>Tuesday, 02:23pm</p>
+                                            </th>
+                                            <td class="align-content-center">Prepaid</td>
+                                            <td class="align-content-center">PayJet Remit</td>
+                                            <td class="align-content-center">
+                                                <p class="bg-danger-subtle rounded-4 text-center w-100 text-danger">Pending</p>
+                                            </td>
+                                            <td class="align-content-center">Rs. 50024</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>
+                                                    <b>12-03-2024</b>
+                                                </span>
+                                                <p>Tuesday, 02:23pm</p>
+                                            </th>
+                                            <td class="align-content-center">Prepaid</td>
+                                            <td class="align-content-center">Payout</td>
+                                            <td class="align-content-center">
+                                                <p class="bg-success-subtle rounded-4 text-center w-100 text-success">Success</p>
+                                            </td>
+                                            <td class="align-content-center">Rs. 50024</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-12 col-xl-4 p-3 mt-2">
+                    <div class="card shadow-sm border-0">
+                        <div class="containe p-3">
+                            <h5 class="text-center fw-bold">Total Transactions</h5>
+                            <div class="skill-container">
+                                <div class="skill">
+                                    <div class="outer">
+                                        <div class="inner">
+                                            <div id="number">
+                                               
+                                            </div> 
+                                            <br/>
+                                        </div>
+                                    </div>  
+                                    <br/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                        <defs>
+                                           <linearGradient id="GradientColor">
+                                              <stop offset="0%" stop-color="#e91e63" />
+                                              <stop offset="100%" stop-color="#673ab7" />
+                                           </linearGradient>
+                                        </defs>
+                                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+          </div>  
+     <!-- Dashboard End/-->
+     
+      <!-- scanner modal -->
+    <div
+    class="modal fade w-100"
+    id="exampleModalscanner"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabelscanner"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="exampleModalLabelscanner">My QR Code</h3>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="" class="text-danger">NOTES:</label>
+                <ol class="text-danger">1.
+                    <span class="text-success">
+                        Rs.2+(18% GST)</span>
+                    on every transaction.</ol>
+                <ol class="text-danger">2. 3%+GST on Credit Card to UPI transaction.</ol>
+                <ol class="text-danger">3. Please do not use Airtel Payment Bank</ol>
+                <ol class="text-danger">4. Use QR Code for transactions below 1,00,000 only</ol>
+            </div>
+            <div class="container text-center">
+                <img src="images/scanner.svg" alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- scanner modal End/-->
+
+     <!-- Modal Emi-->
+  <div class="modal fade shadow" id="exampleModalEmi" tabindex="-1" aria-labelledby="exampleModalLabelEmi" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title fs-5" id="exampleModalLabelEmi">EMI Calculator</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div id="border">   <!--border-->
+                    <div id="emi-calculation p-4">    <!--calculation part-->
+                         <div class="row">
+                            <div class="section">         <!--loan amount with input-->
+                                <label id="loanamount" class="label">Loan Amount:(USD)</label>
+                                <input type="number" class="input" id="value1" placeholder="Enter Loan amount.."></input>
+                            </div>                        <!--loan amount with input closing-->
+                         </div>
+                         <div class="row">
+                            <div class="section">   <!--interest rate with input-->
+                                <label id="interestrate" class="label">Interest Rate:(%)</label>
+                                <input type="number" class="input" id="value2" placeholder="Enter IR per year.."></input>
+                            </div>              <!--interest rate with input closing-->
+                         </div>
+                          <div class="row">
+                            <div class="section"> <!--loan terms with input-->
+                                <label id="loanduration" class="label">Loan Duration(Months):</label>
+                                <input type="number" class="input" id="value3" placeholder="Enter loan duration.."></input>
+                            </div>   <!--loan terms with input closing-->
+                          </div>
+                           <div class="row">
+                            <div class="submit">           <!--button-->
+                                <button type="submit" class="btn btn-primary" id="calc" onclick="calculation()">Calculate</button>
+                            </div>                          <!--button closing-->
+                           </div>
+                    </div>    <!--Calculation part closing-->
+
+                    <div class="container" id="emi-output">
+                      <div class="result">Monthly Interest: <span id="monthly-interest"></span>
+                      </div>
+                      <div class="result">Monthly Payment: <span id="monthly-payment"></span>
+                      </div>
+                      <div class="result">Total Repayment: <span id="total-repayment"></span>
+                      </div>
+                      <div class="result">Total Interest Cost: <span id="total-interest"></span>
+                      </div>
+                    <div class="submit my-2">           <!--button-->
+                 <button type="submit" class="btn btn-primary" id="reset" onclick="reset()">Reset</button>
+                  </div>                          <!--button closing-->  
+                    </div>
+                  </div> <!--border closing-->
+             </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script>
+        let usersSection=document.querySelector(".animatedviewplan");
+        function showHiderUsers(){
+          usersSection.classList.toggle("hide")
+        }
+    </script>
+    
+     <!-- profile -->
+     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+     <script>
+        let profile = document.querySelector('.profile');
+        let menu = document.querySelector('.menu');
+        profile.onclick = function () {
+        menu.classList.toggle('active');
+  }
+  </script>
+    
+    <script src="https://cdn.jsdelivr.net/jquery.easy-pie-chart/1.0.1/jquery.easy-pie-chart.js"></script>
+
+    <script>
+        $(function() {
+  $('.chart').easyPieChart({
+    // The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+    barColor: '#ef1e25',
+    // The color of the track for the bar, false to disable rendering.
+    trackColor: '#f2f2f2',
+    // The color of the scale lines, false to disable rendering.
+    scaleColor: '#dfe0e0',
+    // Defines how the ending of the bar line looks like. Possible values are: butt, round and square.
+    lineCap: 'round',
+    // Width of the bar line in px.
+    lineWidth: 10,
+    // Size of the pie chart in px. It will always be a square.
+    size: 110,
+    // Time in milliseconds for a eased animation of the bar growing, or false to deactivate.
+    animate: 1000,
+    // Callback function that is called at the start of any animation (only if animate is not false).
+    onStart: $.noop,
+    // Callback function that is called at the end of any animation (only if animate is not false).
+    onStop: $.noop
+  });
+  $('.updatePieCharts').on('click', function(e) {
+    e.preventDefault();
+    var newValue = Math.floor(100 * Math.random());
+    $('.chart').data('easyPieChart').update(newValue);
+    $('span', $('.chart')).text(newValue);
+  });
+});
+    </script>
+    <!-------------Bootstrap js cdn --> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <!-- alert js success warning -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- custome script  -->
+    <script src="script.js"></script>
+    <!-- jquer chart -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+</body>
+</html>

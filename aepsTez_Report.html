@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeps Tez Report</title>
+    <!--------------Css custome file-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleNavigationbar.css">
+    <link rel="stylesheet" href="styletabs.css">
+    <!-------------Bootstrap Css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-------------Bootstrap cdn icon -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!---------Fontawsome cdn icon--->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="images/favicon.svg" rel="icon"/>
+    <style>
+         .table tr{
+            border-bottom: transparent;
+         }
+         table {
+            overflow:hidden;
+            tr {
+            transition:all 1s ease-in-out;
+            &.slide-out {
+                transform:translateX(100%);
+            }
+    }
+  }
+    </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-xl bg-body-tertiary shadow">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+                <img src="images/payjet-Logo.svg" alt="" width="60">
+                <img src="images/logo-text-nav.svg" alt="" width="100">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard.html">
+                    <img src="images/dashboard-icon.svg" alt="dashboard-icon-error">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Epos-settlement.html">Epos Settlement</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Report
+                </a>
+                <ul class="dropdown-menu mega-menu dropdown-menu-dark">
+                  <div class="row">
+                     <div class="col-lg p-0">
+                      <img src="images/dropdown-img.svg" alt="" class="mega-menu-img" >
+                     </div>
+                     <div class="col-md p-0">
+                       <h4 class="dropdown-header px-3">Reports</h4>
+                      <li><a class="dropdown-item" href="recharge_Report.html">Recharge Report</a></li>
+                      <li><a class="dropdown-item" href="searchRecharge_Report.html">Search Recharge</a></li>
+                      <li><a class="dropdown-item" href="fastag_Report.html">Fastag Recharges</a></li>
+                      <li><a class="dropdown-item" href="dmt_Report.html">DMT Report</a></li>
+                      <li><a class="dropdown-item" href="dmt_Transaction.html">DMT Transaction Search</a></li>
+                      <li><a class="dropdown-item" href="DMT-KYC_report.html">DMT-KYC Report</a></li>
+                     </div>
+                     <div class="col-lg p-0">
+                      <h5 class="dropdown-header1 px-3">Reports</h5>
+                      <li><a class="dropdown-item" href="creditCardBill_Report.html">Credit Card Bill Payment</a></li>
+                      <li><a class="dropdown-item" href="apesXpress_Report.html">Aeps Xpress</a></li>
+                      <li><a class="dropdown-item" href="aepsTez_Report.html">Aeps Tez</a></li>
+                      <li><a class="dropdown-item" href="aepsICIC_report.html">Aeps ICICI</a></li>
+                      <li><a class="dropdown-item" href="aadharPay_report.html">Aadhar Pay</a></li>
+                      <li><a class="dropdown-item" href="insurance_Report.html">Insurance</a></li>
+                     </div>
+                     <div class="col-lg p-0">
+                      <h4 class="dropdown-header1 px-3">Reports</h4>
+                      <li><a class="dropdown-item" href="billPayment_report.html">Bill Payment</a></li>
+                      <li><a class="dropdown-item" href="account_Report.html">Account Report</a></li>
+                      <li><a class="dropdown-item" href="balanceTopup_report.html">Balance TopUp History</a></li>
+                      <li><a class="dropdown-item" href="bankList_report.html">Bank List</a></li>
+                      <li><a class="dropdown-item" href="paymentWithdral_report.html">Payment Withdrawal</a></li>
+                      <li><a class="dropdown-item" href="CMSbill_report.html">CMS Bill</a></li>
+                     </div>
+                     <div class="col-lg p-0">
+                      <h4 class="dropdown-header1 px-3">Reports</h4>
+                      <li><a class="dropdown-item" href="paymentGateway_report.html">Postpaid Bill Transaction</a></li>
+                      <li><a class="dropdown-item" href="EposPending_report.html">EPOS Pending Transaction</a></li>
+                      <li><a class="dropdown-item" href="turboEpayment_report.html">Turbo E Payment Request</a></li>
+                      <li><a class="dropdown-item" href="rupayCard_report.html">Rupay Card</a></li>
+                      <li><a class="dropdown-item" href="paymentGateway_report.html">Payment Gateway</a></li>
+                     </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="complain.html">Complain</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="payout.html">Payout</a>
+              </li>
+            </ul>
+            <div class="wallet-header">
+                <div class="select">
+                  <div class="selectBtn" data-type="firstOption">
+                     <img src="images/wallet-nav.svg" alt="" class="mb-1">
+                      <span class="wallet">Wallet</span> <span class="wallet-amount">₹14.12</span>
+                  </div>
+                  <div class="selectDropdown">
+                    <div class="option border-bottom" data-type="firstOption"><a href="creditcard.html">Credit Card</a></div>
+                    <div class="option border-bottom" data-type="secondOption"><a href="debitcard.html">Debit Card</a></div>
+                    <div class="option" data-type="thirdOption"><a href="pro-paymentgtway.html">Payment Wallet</a></div>
+                  </div>
+                </div>
+              </div> 
+              <!-- <div class="scanner me-3">
+                <i class="bi bi-qr-code fs-2"></i>
+              </div> -->
+              <div class="qr-code">
+                <div type="button" class="me-2" data-bs-toggle="modal" data-bs-target="#exampleModalscanner">
+                    <i class="bi bi-qr-code fs-2"></i>
+                </div>
+                <!-- Modal -->
+              </div>
+              <div class="Emi-calculator ms-2">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalEmi">
+                   <img src="images/emi-calculator.svg" alt="" class="mb-1"> <span class="emi-text">EMI Calculator</span>
+                </button>
+              </div> 
+              <nav>
+                <div class="menu-toggle1"></div>
+                <div class="profile">
+                  <div class="img-box">
+                    <i class="bi bi-person-circle fs-2 px-2"></i>
+                  </div>
+                </div>
+                <div class="menu">
+                  <ul>
+                    <li><a href="profile.html"><i class="fa-solid fa-user"></i>&nbsp;Profile</a></li>
+                    <li><a href="passwordChange.html"><i class="fa-solid fa-key"></i>&nbsp;Password Change</a></li>
+                    <li><a href="createTpin.html"><i class="fa-solid fa-user-lock"></i>&nbsp;Create Tpin</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a></li>
+                  </ul>
+                </div>
+              </nav>
+          </div>
+        </div>
+      </nav>
+   </header>
+   <!-- marquee tag start -->
+   <marquee behavior="" direction="" class="py-1">
+    <i class="bi bi-record-circle-fill"></i> Join PayJet as a Financial Advisor. Be a part of a large and growing family of
+        25,000+ partners
+        <i class="bi bi-record-circle-fill"></i>
+        Partner with PayJet and get closer to financial freedom
+        <i class="bi bi-record-circle-fill"></i>
+        Join PayJet as a Financial Advisor. Be a part of a large and growing family of
+        25,000+ partners
+        <i class="bi bi-record-circle-fill"></i>
+        Partner with PayJet and get closer to financial freedom
+  </marquee>
+   <!-- marquee tag End/ -->
+    <!--Start Sticky Icon-->
+    <div class="sticky-icon">
+        <a href="whatsapp.html" class="Whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            Whatsapp
+        </a>
+      </div>
+   <!--End Sticky Icon-->
+   <!-- report section -->
+     <section class="report-top bg-dark">
+        <div class="container py-4">
+              <div class="card p-3">
+                  <div class="row align-items-center mb-3">
+                      <div class="col-12 col-md-12">
+                        <h4>Aeps Tez Report</h4>
+                      </div>
+                  </div>
+                  <form action="">
+                      <div class="row align-items-center">
+                          <div class="col-12 col-md-6 col-lg-5 col-xl-5">
+                            <label for="" class="form-label">From Date</label>
+                            <input type="date" class="form-control" id="" required>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-5 col-xl-5">
+                            <label for="" class="form-label">To Date</label>
+                            <input type="date" class="form-control" id="" required>
+                          </div>
+                          <div class="col-12 col-md-12 col-lg-12 col-xl-2 mt-3">
+                            <button class="btn btn-primary mt-3">Search</button>
+                            <button class="btn btn-success mt-3">Export</button>
+                         </div>
+                      </div>
+                  </form>
+              </div>
+        </div>
+     </section>
+     <section class="report-table">
+         <div class="container pt-3">
+             <div class="card p-4 border-0" style="box-shadow: 0px 8px 24px 0px #464C8840;">
+                <div class="table-responsive">
+                    <table class="table table-hover zigzag">
+                        <thead>
+                            <tr class="bg-success-subtle">
+                                <th scope="col " class="bg-secondary-subtle">Sr</th>
+                                <th scope="col" class="bg-secondary-subtle">Txn Date & Time</th>
+                                <th scope="col" class="bg-secondary-subtle">Request Id</th>
+                                <th scope="col" class="bg-secondary-subtle">Order Id</th>
+                                <th scope="col" class="bg-secondary-subtle">Aadhar Number</th>
+                                <th scope="col" class="bg-secondary-subtle">Depositer Mobile No</th>
+                                <th scope="col" class="bg-secondary-subtle">Bank Name</th>
+                                <th scope="col" class="bg-secondary-subtle">Tnx Amount</th>
+                                <th scope="col" class="bg-secondary-subtle">Response Message</th>
+                                <th scope="col" class="bg-secondary-subtle">Status</th>
+                                <th scope="col" class="bg-secondary-subtle">Receipt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>986532</td>
+                                <td>02-12-2024, 06:30PM</td>
+                                <td>9632587410</td>
+                                <td>9632587410</td>
+                                <td>50,000</td>
+                                <td>SBI Bank</td>
+                                <td>tccom4500m000</td>
+                                <td class="text-danger">Pending</td>
+                                <td>Complain</td>
+                                <td>986532</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>986556</td>
+                                <td>02-12-2024, 06:30PM</td>
+                                <td>9632587410</td>
+                                <td>9632587410</td>
+                                <td>50,000</td>
+                                <td>SBI Bank</td>
+                                <td>tccom4500m000</td>
+                                <td class="text-success">Success</td>
+                                <td>Complain</td>
+                                <td>986538</td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>986563</td>
+                                <td>02-12-2024, 06:30PM</td>
+                                <td>9632587410</td>
+                                <td>9632587410</td>
+                                <td>50,000</td>
+                                <td>Union Bank</td>
+                                <td>tccom4500m000</td>
+                                <td class="text-success">Success</td>
+                                <td>Complain</td>
+                                <td>986534</td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>986500</td>
+                                <td>02-12-2024, 06:30PM</td>
+                                <td>9632587410</td>
+                                <td>9632587410</td>
+                                <td>50,000</td>
+                                <td>ICICI Bank</td>
+                                <td>tccom4500m000</td>
+                                <td class="text-success">Success</td>
+                                <td>Complain</td>
+                                <td>986530</td>
+                            </tr>
+                       </tbody>
+                    </table>
+                </div>
+             </div>
+         </div>
+     </section>
+       <!-- scanner modal -->
+    <div
+    class="modal fade w-100"
+    id="exampleModalscanner"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabelscanner"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="exampleModalLabelscanner">My QR Code</h3>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="" class="text-danger">NOTES:</label>
+                <ol class="text-danger">1.
+                    <span class="text-success">
+                        Rs.2+(18% GST)</span>
+                    on every transaction.</ol>
+                <ol class="text-danger">2. 3%+GST on Credit Card to UPI transaction.</ol>
+                <ol class="text-danger">3. Please do not use Airtel Payment Bank</ol>
+                <ol class="text-danger">4. Use QR Code for transactions below 1,00,000 only</ol>
+            </div>
+            <div class="container text-center">
+                <img src="images/scanner.svg" alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- scanner modal End/-->
+
+     <!-- Modal Emi-->
+  <div class="modal fade shadow" id="exampleModalEmi" tabindex="-1" aria-labelledby="exampleModalLabelEmi" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title fs-5" id="exampleModalLabelEmi">EMI Calculator</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div id="border">   <!--border-->
+                    <div id="emi-calculation p-4">    <!--calculation part-->
+                         <div class="row">
+                            <div class="section">         <!--loan amount with input-->
+                                <label id="loanamount" class="label">Loan Amount:(USD)</label>
+                                <input type="number" class="input" id="value1" placeholder="Enter Loan amount.."></input>
+                            </div>                        <!--loan amount with input closing-->
+                         </div>
+                         <div class="row">
+                            <div class="section">   <!--interest rate with input-->
+                                <label id="interestrate" class="label">Interest Rate:(%)</label>
+                                <input type="number" class="input" id="value2" placeholder="Enter IR per year.."></input>
+                            </div>              <!--interest rate with input closing-->
+                         </div>
+                          <div class="row">
+                            <div class="section"> <!--loan terms with input-->
+                                <label id="loanduration" class="label">Loan Duration(Months):</label>
+                                <input type="number" class="input" id="value3" placeholder="Enter loan duration.."></input>
+                            </div>   <!--loan terms with input closing-->
+                          </div>
+                           <div class="row">
+                            <div class="submit">           <!--button-->
+                                <button type="submit" class="btn btn-primary" id="calc" onclick="calculation()">Calculate</button>
+                            </div>                          <!--button closing-->
+                           </div>
+                    </div>    <!--Calculation part closing-->
+
+                    <div class="container" id="emi-output">
+                      <div class="result">Monthly Interest: <span id="monthly-interest"></span>
+                      </div>
+                      <div class="result">Monthly Payment: <span id="monthly-payment"></span>
+                      </div>
+                      <div class="result">Total Repayment: <span id="total-repayment"></span>
+                      </div>
+                      <div class="result">Total Interest Cost: <span id="total-interest"></span>
+                      </div>
+                    <div class="submit my-2">           <!--button-->
+                 <button type="submit" class="btn btn-primary" id="reset" onclick="reset()">Reset</button>
+                  </div>                          <!--button closing-->  
+                    </div>
+                  </div> <!--border closing-->
+             </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- // Start table slide animation  -->
+     <script>
+            const rows = Array.from(document.querySelectorAll('tr'));
+            function slideOut(row) {
+            row.classList.add('slide-out');
+            }
+            function slideIn(row, index) {
+            setTimeout(function() {
+                row.classList.remove('slide-out');
+            }, (index + 5) * 200);  
+            }
+            rows.forEach(slideOut);
+            rows.forEach(slideIn);
+     </script>
+     <!-- // End table slide animation  -->
+
+     <!-- profile -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+       let profile = document.querySelector('.profile');
+       let menu = document.querySelector('.menu');
+       profile.onclick = function () {
+       menu.classList.toggle('active');
+ }
+ </script>
+ <!-- profile End/-->
+ 
+    <!-------------Bootstrap js cdn --> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <!-- custome script  -->
+    <script src="script.js"></script>
+</body>
+</html>

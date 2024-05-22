@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payout</title>
+    <!--------------Css custome file-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleNavigationbar.css">
+    <link rel="stylesheet" href="styletabs.css">
+    <!-------------Bootstrap Css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-------------Bootstrap cdn icon -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!---------Fontawsome cdn icon--->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="images/favicon.svg" rel="icon"/>
+     <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+   <style>
+       /* alert */
+    .alert-message {
+        line-height: 20px;
+        font-size: 15px;
+        padding-bottom: 12px;
+    }
+    .unstyled {
+        margin: 0;
+        list-style: none;
+    }
+    .unstyled #test,
+    .unstyled a {
+        width: 120px;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        background-color: #213347;
+        border-radius: 4px;
+        display: block;
+        margin-bottom: 0.5em;
+        font-size: 15px;
+        font-weight: 300;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .unstyled #test:hover,
+    .unstyled a:hover {
+        background-color: #f25c5d;
+    }
+    .alert,
+    .cf {
+        zoom: 1;
+    }
+    .alert:after,
+    .alert:before,
+    .cf:after,
+    .cf:before {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+    .alert:after,
+    .cf:after {
+        clear: both;
+    }
+    #alerts {
+        width: 400px;
+        top: 12px;
+        right: 50px;
+        position: fixed;
+        z-index: 9999;
+        list-style: none;
+    }
+    .alert {
+        width: 100%;
+        margin-bottom: 8px;
+        display: block;
+        position: relative;
+        border-left: 4px solid;
+        right: -50px;
+        opacity: 0;
+        line-height: 1;
+        padding: 0;
+        transition: right 400ms, opacity 400ms, line-height 300ms 100ms, padding 300ms 100ms;
+        display: table;
+    }
+    .alert:hover {
+        cursor: pointer;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    .open {
+        right: 0;
+        opacity: 1;
+        line-height: 2;
+        padding: 3px 15px;
+        transition: line-height 200ms, padding 200ms, right 350ms 200ms, opacity 350ms 200ms;
+    }
+    .alert-title {
+        font-weight: bold;
+    }
+    .alert-block {
+        width: 80%;
+        width: -webkit-calc(100% - 10px);
+        width: calc(100% - 10px);
+        text-align: left;
+    }
+    .alert-block em,
+    .alert-block small {
+        font-size: 0.75em;
+        opacity: 0.75;
+        display: block;
+    }
+    .alert i {
+        font-size: 2em;
+        width: 1.5em;
+        max-height: 48px;
+        top: 50%;
+        margin-top: -12px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .alert-success {
+        color: #fff;
+        border-color: #539753!important;
+        background-color: #8fbf2f !important;
+    }
+    .alert-info {
+        color: #fff;
+        border-color: #076d91 !important;
+        background-color: #3397db !important;
+    }
+    .alert-warning {
+        color: #fff;
+        border-color: #dd6137 !important;
+        background-color: #f7931d !important;
+    }
+    /* end alert */
+   </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-xl bg-body-tertiary shadow">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+                <img src="images/payjet-Logo.svg" alt="" width="60">
+                <img src="images/logo-text-nav.svg" alt="" width="100">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard.html">
+                    <img src="images/dashboard-icon.svg" alt="dashboard-icon-error">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Epos-settlement.html">Epos Settlement</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Report
+                </a>
+                <ul class="dropdown-menu mega-menu dropdown-menu-dark">
+                  <div class="row">
+                     <div class="col-lg p-0">
+                      <img src="images/dropdown-img.svg" alt="" class="mega-menu-img" >
+                     </div>
+                     <div class="col-md p-0">
+                       <h4 class="dropdown-header px-3">Reports</h4>
+                      <li><a class="dropdown-item" href="recharge_Report.html">Recharge Report</a></li>
+                      <li><a class="dropdown-item" href="searchRecharge_Report.html">Search Recharge</a></li>
+                      <li><a class="dropdown-item" href="fastag_Report.html">Fastag Recharges</a></li>
+                      <li><a class="dropdown-item" href="dmt_Report.html">DMT Report</a></li>
+                      <li><a class="dropdown-item" href="dmt_Transaction.html">DMT Transaction Search</a></li>
+                      <li><a class="dropdown-item" href="DMT-KYC_report.html">DMT-KYC Report</a></li>
+                     </div>
+                     <div class="col-lg p-0">
+                      <h5 class="dropdown-header1 px-3">Reports</h5>
+                      <li><a class="dropdown-item" href="creditCardBill_Report.html">Credit Card Bill Payment</a></li>
+                      <li><a class="dropdown-item" href="apesXpress_Report.html">Aeps Xpress</a></li>
+                      <li><a class="dropdown-item" href="aepsTez_Report.html">Aeps Tez</a></li>
+                      <li><a class="dropdown-item" href="aepsICIC_report.html">Aeps ICICI</a></li>
+                      <li><a class="dropdown-item" href="aadharPay_report.html">Aadhar Pay</a></li>
+                      <li><a class="dropdown-item" href="insurance_Report.html">Insurance</a></li>
+                     </div>
+                     <div class="col-lg p-0">
+                      <h4 class="dropdown-header1 px-3">Reports</h4>
+                      <li><a class="dropdown-item" href="billPayment_report.html">Bill Payment</a></li>
+                      <li><a class="dropdown-item" href="account_Report.html">Account Report</a></li>
+                      <li><a class="dropdown-item" href="balanceTopup_report.html">Balance TopUp History</a></li>
+                      <li><a class="dropdown-item" href="bankList_report.html">Bank List</a></li>
+                      <li><a class="dropdown-item" href="paymentWithdral_report.html">Payment Withdrawal</a></li>
+                      <li><a class="dropdown-item" href="CMSbill_report.html">CMS Bill</a></li>
+                     </div>
+                     <div class="col-lg p-0">
+                      <h4 class="dropdown-header1 px-3">Reports</h4>
+                      <li><a class="dropdown-item" href="paymentGateway_report.html">Postpaid Bill Transaction</a></li>
+                      <li><a class="dropdown-item" href="EposPending_report.html">EPOS Pending Transaction</a></li>
+                      <li><a class="dropdown-item" href="turboEpayment_report.html">Turbo E Payment Request</a></li>
+                      <li><a class="dropdown-item" href="rupayCard_report.html">Rupay Card</a></li>
+                      <li><a class="dropdown-item" href="paymentGateway_report.html">Payment Gateway</a></li>
+                     </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="complain.html">Complain</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="payout.html">Payout</a>
+              </li>
+            </ul>
+            <div class="wallet-header">
+                <div class="select">
+                  <div class="selectBtn" data-type="firstOption">
+                     <img src="images/wallet-nav.svg" alt="" class="mb-1">
+                      <span class="wallet">Wallet</span> <span class="wallet-amount">₹14.12</span>
+                  </div>
+                  <div class="selectDropdown">
+                    <div class="option border-bottom" data-type="firstOption"><a href="creditcard.html">Credit Card</a></div>
+                    <div class="option border-bottom" data-type="secondOption"><a href="debitcard.html">Debit Card</a></div>
+                    <div class="option" data-type="thirdOption"><a href="pro-paymentgtway.html">Payment Wallet</a></div>
+                  </div>
+                </div>
+              </div> 
+              <!-- <div class="scanner me-3">
+                <i class="bi bi-qr-code fs-2"></i>
+              </div> -->
+              <div class="qr-code">
+                <div type="button" class="me-2" data-bs-toggle="modal" data-bs-target="#exampleModalscanner">
+                    <i class="bi bi-qr-code fs-2"></i>
+                </div>
+                <!-- Modal -->
+              </div>
+              <div class="Emi-calculator ms-2">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalEmi">
+                   <img src="images/emi-calculator.svg" alt="" class="mb-1"> <span class="emi-text">EMI Calculator</span>
+                </button>
+              </div> 
+              <nav>
+                <div class="menu-toggle1"></div>
+                <div class="profile">
+                  <div class="img-box">
+                    <i class="bi bi-person-circle fs-2 px-2"></i>
+                  </div>
+                </div>
+                <div class="menu">
+                  <ul>
+                    <li><a href="profile.html"><i class="fa-solid fa-user"></i>&nbsp;Profile</a></li>
+                    <li><a href="passwordChange.html"><i class="fa-solid fa-key"></i>&nbsp;Password Change</a></li>
+                    <li><a href="createTpin.html"><i class="fa-solid fa-user-lock"></i>&nbsp;Create Tpin</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</a></li>
+                  </ul>
+                </div>
+              </nav>
+          </div>
+        </div>
+      </nav>
+   </header>
+  <marquee behavior="" direction="" class="py-1">
+    <i class="bi bi-record-circle-fill"></i>
+    Join PayJet as a Financial Advisor. Be a part of a large and growing family of
+    25,000+ partners
+    <i class="bi bi-record-circle-fill"></i>
+    Partner with PayJet and get closer to financial freedom
+    <i class="bi bi-record-circle-fill"></i>
+    Join PayJet as a Financial Advisor. Be a part of a large and growing family of
+    25,000+ partners
+    <i class="bi bi-record-circle-fill"></i>
+    Partner with PayJet and get closer to financial freedom
+  </marquee>
+    <!--================================== header End Navigationbar=========================== -->
+    <div class="container-fluid  bg-dark py-5 m-auto">
+         <div class="container pt-2">
+              <div class="row align-items-center">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="align-items: center; justify-content: center;">
+                    <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-mobile-tab" data-bs-toggle="pill" data-bs-target="#pills-mobile" role="tab" aria-controls="pills-mobile" aria-selected="true">
+                            <div class="mobile-icon"><img src="images/mobile-tab.svg" alt=""></div>
+                            <div class="tab-text"><a href="#">Mobile</a></div>
+                        </div>
+                    </li>
+                    <li class="nav-item text-center" role="presentation">
+                      <div class="nav-link" id="pills-postpaid-tab" data-bs-toggle="pill" data-bs-target="#pills-postpaid" role="tab" aria-controls="pills-postpaid" aria-selected="false">
+                           <div class="postpaid-icon"><img src="images/postpaid1-tab.svg" alt=""></div>
+                           <div class="tab-text"><a href="#">Post Paid</a></div>   
+                      </div>
+                    </li>
+                    <li class="nav-item text-center" role="presentation">
+                      <div class="nav-link" id="pills-cardpayment-tab" data-bs-toggle="pill" data-bs-target="#pills-cardpayment" role="tab" aria-controls="pills-cardpayment" aria-selected="false">
+                        <div class="postpaid-icon"><img src="images/postpaid-tab.svg" alt=""></div>
+                        <div class="tab-text"> <a href="#" class="nav-link">Card Payment</a></div>   
+                      </div>
+                    </li>
+                    <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-DTH-tab" data-bs-toggle="pill" data-bs-target="#pills-DTH" role="tab" aria-controls="pills-DTH" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/DTH-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="#" class="nav-link">DTH</a></div> 
+                        </div>
+                      </li>
+                      <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-moneytransfer-tab" data-bs-toggle="pill" data-bs-target="#pills-moneytransfer" role="tab" aria-controls="pills-moneytransfer" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/MoneyTransfer-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="#" class="nav-link">Money Transfer</a></div> 
+                        </div>
+                      </li>
+                      <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-Aadarpay-tab" data-bs-toggle="pill" data-bs-target="#pills-Aadarpay" role="tab" aria-controls="pills-Aadarpay" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/Aadhaar-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="#" class="nav-link">Aadhar Pay</a></div> 
+                        </div>
+                      </li>
+                      <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-electricity-tab" data-bs-toggle="pill" data-bs-target="#pills-electricity"  role="tab" aria-controls="pills-electricity" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/electricity-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="#" class="nav-link">Electricity</a></div> 
+                        </div>
+                      </li>
+                      <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-fastag-tab" data-bs-toggle="pill" data-bs-target="#pills-fastag" role="tab" aria-controls="pills-fastag" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/fastag-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="#" class="nav-link">Fastag</a> </div>
+                        </div>
+                      </li>
+                      <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-gas-tab" data-bs-toggle="pill" data-bs-target="#pills-gas" role="tab" aria-controls="pills-gas" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/gas-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="#" class="nav-link">Gas</a></div>
+                        </div>
+                      </li>
+                      <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-insurance-tab" data-bs-toggle="pill" data-bs-target="#pills-insurance" role="tab" aria-controls="pills-insurance" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/insurance-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="insurance.html" class="nav-link">Insurance</a></div> 
+                        </div>
+                      </li>
+                      <li class="nav-item text-center" role="presentation">
+                        <div class="nav-link" id="pills-paymentgateway-tab" data-bs-toggle="pill" data-bs-target="#pills-paymentgateway" role="tab" aria-controls="pills-paymentgateway" aria-selected="false">
+                          <div class="postpaid-icon"><img src="images/paymentgateway-tab.svg" alt=""></div>
+                          <div class="tab-text"><a href="#" class="nav-link">Payment Gateway</a></div> 
+                        </button>
+                      </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade text-white" id="pills-mobile" role="tabpanel" aria-labelledby="pills-mobile-tab" tabindex="0"> 
+                        <div class="container-fluid">
+                            <div class="card p-4" style="margin-bottom: 20px;">
+                              <h4>Mobile Recharge</h4>
+                              <form class="row g-3 needs-validation align-items-center" novalidate>
+                                <div class="col-12 col-md-6 col-lg-2">
+                                  <label for="validationMobileNumber" class="form-label">Mobile Number</label>
+                                  <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Enter Mobile Number">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-2 ">
+                                  <label for="validationselect" class="form-label">Select Your Operator</label>
+                                  <select class="form-select" id="validationselect">
+                                    <option selected>Airtel Prepaid </option>
+                                    <option value="1">BSNL Prepaid</option>
+                                    <option value="2">Vi Prepaid</option>
+                                    <option value="3">Jio</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-2">
+                                  <label for="validationAmount" class="form-label">Amount</label>
+                                  <input type="text" class="form-control" id="validationAmount" value="" placeholder="Enter Amount">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-2">
+                                  <label for="validationTpin" class="form-label">Tpin</label>
+                                  <input type="text" class="form-control" id="validationTpin" value="" placeholder="Enter Tpin">
+                                </div>
+                                <div class="col-md-12 col-md-12 col-lg-4 mt-5">
+                                  <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    Submit
+                                  </button>
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header m-auto">
+                                          <div class="modal-title" id="staticBackdropLabel">
+                                              <div class="dot1 text-center">
+                                                <span> <i class="bi bi-check-circle-fill fs-1 text-success"></i></span>
+                                              </div>
+                                          </div>
+                                        </div>
+                                        <div class="modal-body">
+                                          <h4 class="text-center mb-3">Payment Successful</h4>
+                                            <div class="container">
+                                              <div class="row mb-3">
+                                                <div class="col-6 ps-4">
+                                                   <h6>Mobile Number</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                   <h6>9876543210</h6>
+                                                </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                <div class="col-6 ps-4">
+                                                   <h6>Company</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                   <h6>Airtel Postpaid</h6>
+                                                </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                <div class="col-6 ps-4">
+                                                   <h6>Amount</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                   <h6>499</h6>
+                                                </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                <div class="col-6 ps-4">
+                                                   <div>Plan Name</div>
+                                                </div>
+                                                <div class="col-6">
+                                                   <h6>Airtel MRP 499 Plan</h6>
+                                                </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                <div class="col-6 ps-4">
+                                                   <h6>Date & Time</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                   <h6>01/03/2024</h6>
+                                                </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                <div class="col-6 ps-4">
+                                                   <h6>Payment Status</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                   <h6 style="color:green;">Success</h6>
+                                                </div>
+                                               </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer bg-danger">
+                                           <div class="row text-center" style="justify-content: center;">
+                                                <button type="button" class="col-5 btn btn-primary px-5 me-2" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="col-5 btn btn-success px-5 ms-2">Print</button>
+                                           </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <button onclick="showHiderUsers()" type="button" class="btn btn-success">view plans</button>
+                                </div>
+                              </form>
+                            </div>
+                        </div>
+                        <div class="container mb-1 ms-3">
+                          <div class="animatedviewplan">
+                              <div class="row shadow rounded w-75 p-2" id="table-hideshow">
+                                  <h4 class="text-dark">Browse Plan</h4>
+                                  <div class="row">
+                                      <div class="table-responsive">
+                                       <table class="table table-borderless">
+                                         <thead>
+                                           <tr>
+                                             <th >Demonination</th>
+                                             <th >Commission</th>
+                                             <th >Offer Detail</th>
+                                           </tr>
+                                         </thead>
+                                         <tbody>
+                                           <tr>
+                                             <td><button type="button" class="btn btn-success">Rs. 349</button></td>
+                                             <td>Rs. 0.00</td>
+                                             <td>Rs 349-30D-2.5GB/D -> Benefits: 1. UNLIMITED DATA - 75 GB (2.5 GB/Day) 2. UNLIMITED CALLS3. 100 SMS/Day4. Complimentary Jio AppsValidity - 30 days
+                                              Rs. 2999</td>
+                                           </tr>
+                                           <tr>
+                                              <td><button type="button" class="btn btn-success">Rs. 2999</button></td>
+                                             <td>Rs. 0.00</td>
+                                             <td>Rs 2999-12m-2.5GB/D -> Benefits of 2999: 1. UNLIMITED DATA - 912.5 GB (2.5 GB/Day) 2. UNLIMITED CALLS 3. 100 SMS/Day 4. Complimentary Jio AppsValidity - 365 days.
+                                              Rs. 399</td>
+                                           </tr>
+                                           <tr>
+                                              <td><button type="button" class="btn btn-success">Rs. 399</button></td>
+                                             <td>Rs. 0.00</td>
+                                             <td>Rs 399-28D-90GB -> Benefits: 1. Unlimited Data - 3GB/Day + 6GB2. Unlimited Voice Calls3. 100 SMS/Day4. Complimentary subscription to Jio AppsValidity - 28 Days
+                                              Rs. 2999</td>
+                                           </tr>
+                                         </tbody>
+                                       </table>                           
+                                      </div>
+                                  </div>
+                              </div> 
+                          </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-postpaid" role="tabpanel" aria-labelledby="pills-postpaid-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>Postpaid Recharge</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-6 col-lg">
+                              <label for="validationMobileNumber" class="form-label">Mobile Number</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Enter Mobile Number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg ">
+                              <label for="validationselect" class="form-label">Airtel Postpaid</label>
+                              <select class="form-select" id="validationselect">
+                                <option selected>Idea Postpaid</option>
+                                <option value="1">Jio Postpaid</option>
+                                <option value="2">Vodafone Postpaid</option>
+                                <option value="3">BSNL Postpaid</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg">
+                              <label for="validationAmount" class="form-label">Amount</label>
+                              <input type="text" class="form-control" id="validationAmount" value="" placeholder="Enter Amount">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2">
+                              <label for="validationTpin" class="form-label">Tpin</label>
+                              <input type="text" class="form-control" id="validationTpin" value="" placeholder="Enter Tpin">
+                            </div>
+                            <div class="col-md-12 col-md-12 col-lg mt-5">
+                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropPostapid">
+                                Submit
+                              </button>
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdropPostapid" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropPostapidLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header m-auto">
+                                      <div class="modal-title" id="staticBackdropLabel">
+                                          <div class="dot1 text-center">
+                                            <span> <i class="bi bi-check-circle-fill fs-2 text-success"></i></span>
+                                          </div>
+                                          <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h4 class="text-center">Payment Successful</h4>
+                                        <div class="container">
+                                          <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Mobile Number</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>9876543210</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Company</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>Airtel Postpaid</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Amount</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>499</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Plan Name</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>Airtel MRP 499 Plan</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Date & Time</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>01/03/2024</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Payment Status</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div style="color:#28A745;">Success</div>
+                                            </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer bg-danger">
+                                       <div class="row text-center" style="justify-content: center;">
+                                            <button type="button" class="col-5 btn btn-primary px-5 me-2" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="col-5 btn btn-success px-5 ms-2">Print</button>
+                                       </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-cardpayment" role="tabpanel" aria-labelledby="pills-cardpayment-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>Credit Card Bill Payment</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationMobileNumber" class="form-label">Customer Mobile Number</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Enter Mobile Number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationselect" class="form-label">Card Bank</label>
+                              <select class="form-select" id="validationselect">
+                                <option selected>Please Select Bank</option>
+                                <option value="1">Axis Bank Credit Card</option>
+                                <option value="2">Bank of Baroda Credit Card</option>
+                                <option value="3">Bank of India Credit Card</option>
+                                <option value="4">Canara Bank Credit Card</option>
+                                <option value="5">HDFC Bank Credit Card</option>
+                                <option value="6">ICICI Bank Credit Card</option>
+                                <option value="7">Citi Bank Credit Card</option>
+                                <option value="8">State Bank Credit Card</option>
+                                <option value="9">Union Bank Credit Card</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationAmount" class="form-label">Card Number</label>
+                              <input type="text" class="form-control" id="validationAmount" value="" placeholder="Card Owner Name">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationAmount" class="form-label">Bill Amount</label>
+                              <input type="text" class="form-control" id="validationAmount" value="" placeholder="Enter Bill Amount">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationTpin" class="form-label">Tpin</label>
+                              <input type="text" class="form-control" id="validationTpin" value="" placeholder="Enter Tpin">
+                            </div>
+                            <div class="col-md-12 col-md-12 col-lg-12">
+                               <div class="container text-end">
+                                <button type="button" class="btn btn-primary text-start" data-bs-toggle="modal" data-bs-target="#staticBackdropcredit">
+                                  Paynow
+                               </button>
+                               </div>
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdropcredit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropcreditLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header m-auto">
+                                      <div class="modal-title" id="staticBackdropLabel">
+                                          <div class="dot1 text-center">
+                                            <span> <i class="bi bi-check-circle-fill fs-2 text-success"></i></span>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h4 class="text-center">Payment Successful</h4>
+                                        <div class="container">
+                                          <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Customer Mobile Number</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>9876543210</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Mode of Payment</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>Credit Card</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Card Bank</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>Axis Bank</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Card Number</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>3216549870 
+                                               </div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Card Owner Name</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>Shirisha</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Transaction Status</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div style="color:#28A745;">Success</div>
+                                            </div>
+                                           </div>
+                                           <div class="row">
+                                            <div class="col-6 ps-4">
+                                               <div>Bill Amount</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>50000/-</div>
+                                            </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer bg-danger">
+                                       <div class="row text-center" style="justify-content: center;">
+                                            <button type="button" class="col-5 btn btn-primary px-5 me-2" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="col-5 btn btn-success px-5 ms-2">Print</button>
+                                       </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-DTH" role="tabpanel" aria-labelledby="pills-DTH-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>DTH Recharge</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-6 col-lg-2">
+                              <label for="validationselect" class="form-label">Operator</label>
+                              <select class="form-select" id="validationselect">
+                                <option selected>Select Operator</option>
+                                <option value="1">Airtel DTH</option>
+                                <option value="2">SUN TV</option>
+                                <option value="3">Videocon D2H</option>
+                                <option value="3">Dish TV</option>
+                                <option value="3">Tata Sky</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                              <label for="validationMobileNumber" class="form-label">Customer ID or Register Number</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="ID or Register Number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2">
+                              <label for="validationAmount" class="form-label">Amount</label>
+                              <input type="tel" class="form-control" id="validationAmount" value="" placeholder="Enter Amount">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2">
+                              <label for="validationTpin" class="form-label">Tpin</label>
+                              <input type="text" class="form-control" id="validationTpin" value="" placeholder="Enter Tpin">
+                            </div>
+                            <div class="col-md-12 col-md-12 col-lg-3 mt-5">
+                              <button class="btn btn-primary" type="submit">Submit</button>
+                              <button type="button" class="btn btn-success text-start" data-bs-toggle="modal" data-bs-target="#staticBackdropDTH">
+                                Get Plan Info
+                              </button>
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdropDTH" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropDTHLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header m-auto">
+                                      <div class="modal-title" id="staticBackdropLabel">
+                                          <!-- <div class="dot1 text-center">
+                                            <span> <i class="bi bi-check-circle-fill fs-2"></i></span>
+                                          </div> -->
+                                      </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                          <div class="row mb-4 align-items-center border-bottom">
+                                            <div class="col-9 ps-4">
+                                               <h4>Plan Info</h4>
+                                            </div>
+                                            <div class="col-2">
+                                               <div data-bs-dismiss="modal"><i class="bi bi-x-circle fs-3 fw-700 mb-5"></i></div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-4">
+                                            <div class="col-6 ps-4">
+                                               <div>Operator :</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>Airteldth</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-4">
+                                            <div class="col-6 ps-4">
+                                               <div>Number :</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>9865632540</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-4">
+                                            <div class="col-6 ps-4">
+                                               <div>Monthly Recharge :</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>undefined </div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-4">
+                                            <div class="col-6 ps-4">
+                                               <div>Balance :</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div>299.00</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Customer Name :</div>
+                                            </div>
+                                            <div class="col-6">
+                                               <div style="color:#28A745;">shirisha</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Status :</div>
+                                            </div>
+                                            <div class="col-6">
+                                              <div style="color:#28A745;">success</div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Next Recharge Date:</div>
+                                            </div>
+                                            <div class="col-6">
+                                              <div></div>
+                                            </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                            <div class="col-6 ps-4">
+                                               <div>Plan :</div>
+                                            </div>
+                                            <div class="col-6">
+                                              <div></div>
+                                            </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer bg-danger">
+                                       <div class="row text-center" style="justify-content: center;">
+                                            <button type="button" class="col-5 btn btn-primary px-5 me-2" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="col-5 btn btn-success px-5 ms-2">Print</button>
+                                       </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-moneytransfer" role="tabpanel" aria-labelledby="pills-moneytransfer-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>Domestic Money Remittance</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-5 col-lg-5">
+                              <label for="validationMobileNumber" class="form-label">Sender Mobile Number</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Sender Mobile Number">
+                            </div>
+                            <div class="col-12 col-md-2 col-lg-1 text-center">
+                                 <div class="dot text-center mt-4">
+                                      <span> OR</span>
+                                 </div>
+                            </div>
+                            <div class="col-12 col-md-5 col-lg-5">
+                              <label for="validationTpin" class="form-label">Recipient Account Number</label>
+                              <input type="text" class="form-control" id="validationTpin" value="" placeholder="Recipient Account Number">
+                            </div>
+                            <div class="col-md-12 col-md-12 col-lg-1 mt-5">
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalMoneytransfer">
+                                Search 
+                              </button>
+                              <!-- Modal -->
+                                <div class="modal fade" id="exampleModalMoneytransfer" tabindex="-1" aria-labelledby="exampleModalLabelMoneytransfer" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                      <div class="modal-header ">
+                                        <h4>Sender Registration</h4>
+                                        <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div class="container">
+                                            <form action="" class="row">
+                                                <div class="col-12 mb-2">
+                                                  <label for="">First Name</label>
+                                                  <input type="text" class="form-control mt-1" placeholder="Enter First Name">
+                                                </div>
+                                                <div class="col-12 mb-2">
+                                                  <label for="">Last Name</label>
+                                                  <input type="text" class="form-control mt-1" placeholder="Enter Last Name">
+                                                </div>
+                                                <div class="col-12 mb-2">
+                                                  <label for="">Pincode</label>
+                                                  <input type="tel" class="form-control mt-1" placeholder="Enter Pincode">
+                                                </div>
+                                                <div class="col-12 mb-2">
+                                                  <label for="">Mobile Number</label>
+                                                  <input type="tel" class="form-control mt-1" placeholder="Enter Mobile Number">
+                                                </div>
+                                            </form>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer" style="border-top: transparent;">
+                                        <div class="container">
+                                            <div class="row" style="place-content: center;">
+                                                  <button type="button" class="btn btn-success col-5" data-bs-dismiss="modal">Cancel</button>
+                                                  <button type="button" class="btn btn-primary col-5 ms-2" data-bs-dismiss="modal">Submit</button>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </form>
+                          <hr class="mt-5">
+                          <div class="table-responsive rounded" id="Div_1">
+                            <table class="table py-2">
+                                <thead class="bg-secondary">
+                                    <tr>
+                                        <th scope="col" class="bg-secondary-subtle">Name</th>
+                                        <th scope="col" class="bg-secondary-subtle">Sekhar</th>
+                                        <th scope="col" class="bg-secondary-subtle">Mobile Number</th>
+                                        <th scope="col" class="bg-secondary-subtle">9705708003</th>
+                                        <th scope="col" class="bg-secondary-subtle">Available Limit
+                                        </th>
+                                        <th class="bg-secondary-subtle">25000/-</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        </div>
+                        <div class="mt-5" id="Div_1">
+                          <div class="card p-5">
+                              <div class="row align-items-center">
+                                  <div class="col-md-6">
+                                      <h4 class="mt-2">Receiver Accounts</h4>
+                                  </div>
+                                  <div class="col-md-6 text-end">
+                                      <button type="button" class="btn btn-primary btn-Receiver">Add New Receiver</button>
+                                      <button type="button" class="btn btn-success">Import Payment Bene</button>
+                                  </div>
+                              </div>
+                              <div class="table-responsive">
+                                  <table class="table mt-3 border-white">
+                                      <thead class="bg-secondary">
+                                          <tr>
+                                              <th scope="col" class="bg-secondary-subtle">Sr</th>
+                                              <th scope="col" class="bg-secondary-subtle">Name</th>
+                                              <th scope="col" class="bg-secondary-subtle">Bank Name</th>
+                                              <th scope="col" class="bg-secondary-subtle">IFSC Code</th>
+                                              <th scope="col" class="bg-secondary-subtle">Account Number
+                                              </th>
+                                              <th class="bg-secondary-subtle">
+                                                  Verification Status</th>
+                                              <th class="bg-secondary-subtle">NEFT</th>
+                                              <th class="bg-secondary-subtle">IMPS</th>
+                                              <th class="bg-secondary-subtle"></th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Ravi Shekar REDDY G</td>
+                                              <td>Axis Bank</td>
+                                              <td>UTIB0001463</td>
+                                              <td>916010053086238</td>
+                                              <td>
+                                                  <i class="bi bi-check-square-fill"></i>
+                                              </td>
+                                              <td class="text-primary">NEFT</td>
+                                              <td class="text-primary">IMPS</td>
+                                              <td>
+                                                  <i class="bi bi-trash3-fill text-danger"></i>
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-Aadarpay" role="tabpanel" aria-labelledby="pills-Aadarpay-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>Business Details</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationMobileNumber" class="form-label">Full Name</label>
+                              <input type="text" class="form-control" id="validationMobileNumber" value="Name" placeholder="Enter Full Name">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationMobileNumber" class="form-label">Mobile Number</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Enter Mobile Number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationemail" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="validationemail" value="shiri@!23gamil.com" placeholder="Enter Email">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationShopName" class="form-label">Shop Name</label>
+                              <input type="text" class="form-control" id="validationShopName" value="2.34" placeholder="Enter Shop Name">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 ">
+                              <label for="validationselectstate" class="form-label">State</label>
+                              <select class="form-select" id="validationselectstate">
+                                <option value="">Select Your State</option>
+                              <option value="">Telangana</option>
+                              <option value="">Andhra Pradesh</option>
+                              <option value="">Arunachal Pradesh</option>
+                              <option value="">Assam</option>
+                              <option value="">Bihar</option>
+                              <option value="">Delhi</option>
+                              <option value="">Goa</option>
+                              <option value="">Gujarat</option>
+                              <option value="">Haryana</option>
+                              <option value="">Kerala</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 ">
+                              <label for="validationselectcity" class="form-label">City</label>
+                              <select class="form-select" id="validationselectcity">
+                                <option selected>Select Your City</option>
+                                <option value="">Select Your City</option>
+                                <option value="">Addanki</option>
+                                <option value="">Adivivaram</option>
+                                <option value="">Adoni</option>
+                                <option value="">Aganampudi</option>
+                                <option value="">Amur</option>
+                                <option value="">Tanuku</option>
+                                <option value="">Krishna</option>
+                                <option value="">Kuppam</option>
+                                <option value="">Tenali</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationAddress" class="form-label">Address</label>
+                              <input type="text" class="form-control" id="validationAddress" value="" placeholder="Enter Address">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <label for="validationTpin" class="form-label">Pincode</label>
+                              <input type="text" class="form-control" id="validationTpin" value="" placeholder="Enter Pincode">
+                            </div>
+                          </form>
+                        </div>
+                        <div class="mt-5">
+                          <div class="card p-3">
+                              <h4>KYC Details</h4>
+                              <div class="row">
+                                  <div class="col-md-6 mt-3">
+                                      <label for="">Pan Card</label>
+                                      <input type="text" class="form-control" placeholder="Enter Full Name">
+                                  </div>
+                                  <div class="col-md-6 mt-3">
+                                      <label for="">Aadhar Number</label>
+                                      <input type="tel" class="form-control " placeholder="Enter Mobile Number">
+                                  </div>
+                              </div>
+                              <div class="container mt-3">
+                                  <div class="row">
+                                      <div class="col-md-10"></div>
+                                      <div class="col-md-2">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalalertsuccess">
+                                          Save
+                                        </button>
+                                      </div>
+                                   </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalalertsuccess" tabindex="-1" aria-labelledby="exampleModalLabelalertsuccess" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header ">
+                                        <h5>Users Mobile Verification</h5>
+                                        <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                         <div class="container">
+                                          <form action="" class="row">   
+                                            <div class="col-12">
+                                             <label for="">Mobile No</label>
+                                             <input type="tel" class="form-control" placeholder="9876543210">
+                                            </div>
+                                            <div class="col-12">
+                                             <label for="" class="mt-3">OTP</label>
+                                             <input type="tel" class="form-control" placeholder="Enter OTP">
+                                            </div>
+                                       </form>
+                                         </div>
+                                      </div>
+                                      <div class="modal-footer" style="border-top: transparent;">
+                                         <div class="container">
+                                             <div class="row" style="place-content: center;">
+                                              <div class="col-md-6">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary w-100 mt-3"
+                                                    data-bs-dismiss="modal"
+                                                    onclick="Alert.success('Successfully Verified Mobile Number ','Success',{displayDuration: 3000, pos: 'top'})">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-success w-100 mt-3"
+                                                    onclick="Alert.info('Successfully sent OTP to your registered mobile number +91 96435 64721 ','OTP',{displayDuration: 3000})">
+                                                    Send OTP
+                                                </button>
+                                             </div>
+                                         </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-electricity" role="tabpanel" aria-labelledby="pills-electricity-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>Electricity Bills</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-4 col-lg-4">
+                              <label for="validationselect" class="form-label">Operator Name</label>
+                              <select class="form-select" id="validationselect">
+                                <option selected>Select Operator Name</option>
+                                <option value="">Tata Power - Delhi</option>
+                                <option value="">Tata Power - Mumbai</option>
+                                <option value="">Test Operator</option>
+                                <option value="">Torrent Power - Bhiwandi</option>
+                                <option value="">Torrent Power - Agra</option>
+                                <option value="">WESCO Utility</option>
+                                <option value="">West Bengal State Electricity Distribution co.Ltd</option>
+                                <option value="">Uttar Gujarat Vij Company Limited</option>
+                                <option value="">Tripura State Electricity Corporation Limited</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3">
+                              <label for="validationMobileNumber" class="form-label">Customer ID</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Enter Your Customer ID">
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3">
+                              <label for="validationAmount" class="form-label">Customer Mobile Number</label>
+                              <input type="tel" class="form-control" id="validationAmount" value="" placeholder="Enter Customer Mobile Number">
+                            </div>
+                            <div class="col-md-12 col-md-12 col-lg-2 mt-5">
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalGetBill">
+                                Get Bill
+                              </button>
+                                <!---Modal-->
+                                <div class="modal fade" id="exampleModalGetBill" tabindex="-1" aria-labelledby="exampleModalLabelGetBill" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header ">
+                                        <h5>Response</h5>
+                                        <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                         <div class="container">
+                                          <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                <h6 class="bg-danger-subtle p-4 text-danger">Incorrect / invalid customer account</h6>
+                                            </div>
+                                          </div>
+                                         </div>
+                                      </div>
+                                      <div class="modal-footer" style="border-top: transparent;">
+                                         <div class="container">
+                                             <div class="row" style="place-content: center;">
+                                              <div class="col-md-6">
+                                                <button type="button" class="btn btn-danger w-100 " data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                         </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-fastag" role="tabpanel" aria-labelledby="pills-fastag-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>Fastag Recharge</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-6 col-lg-3 col-xl-3">
+                              <label for="validationselect" class="form-label">Company Name</label>
+                              <select class="form-select" id="validationselect">
+                                <option selected>Select Company Name</option>
+                                <option value="">Axis Bank Fastag (minimum amount: 100)</option>
+                                <option value="">Bank of Baroda Fastag (minimum amount: 100)</option>
+                                <option value="">HDFC Bank Fastag (minimum amount: 100)</option>
+                                <option value="">ICICI Bank Fastag (minimum amount: 100)</option>
+                                <option value="">IDFC FIRST Bank Fastag (minimum amount: 100)</option>
+                                <option value="">Axis Bank Fastag (minimum amount: 100)</option>
+                                <option value="">Axis Bank Fastag (minimum amount: 100)</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                              <label for="validationMobileNumber" class="form-label">Vehicle Number</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Enter Vehicle Number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                              <label for="validationAmount" class="form-label">Enter Amount</label>
+                              <input type="text" class="form-control" id="validationAmount" value="" placeholder="Enter Amount">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                              <label for="validationTpin" class="form-label">Mobile Number</label>
+                              <input type="tel" class="form-control" id="validationTpin" value="" placeholder="Enter Mobile Number">
+                            </div>
+                            <div class="col-md-12 col-md-12 col-lg-12 col-xl-3 mt-5">
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalGetBalance">
+                                Get Balance
+                              </button>
+                                <!-----Modal Get Balance-->  
+                                <div class="modal fade" id="exampleModalGetBalance" tabindex="-1" aria-labelledby="exampleModalGetBalance" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header ">
+                                        <h5>Fastag Balance</h5>
+                                        <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body mb-0">
+                                        <div class="container">
+                                          <div class="row mb-3">
+                                              <div class="col-md-6">
+                                                  <h6>Fastag Balance</h6>
+                                              </div>
+                                              <div class="col-md-6">
+                                                  <h4>368.00</h4>
+                                              </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                              <div class="col-md-6">
+                                                  <h6>Vehicle Number</h6>
+                                              </div>
+                                              <div class="col-md-6">
+                                                  <p>AP04582C</p>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-md-6">
+                                                  <h6>Tag Status</h6>
+                                              </div>
+                                              <div class="col-md-6">
+                                                  <p>Active</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div class="modal-footer mt-0" style="border-top: transparent;">
+                                         <div class="container">
+                                             <div class="row" style="place-content: center;">
+                                              <div class="col-md-12">
+                                                <button type="button" class="btn btn-primary w-100 " data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                         </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalRecharge">
+                                Recharge
+                              </button>
+                              <!----Modal-->
+                              <div class="modal fade" id="exampleModalRecharge" tabindex="-1" aria-labelledby="exampleModalRecharge" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header ">
+                                      <h5>Payment Details</h5>
+                                      <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body mb-0">
+                                      <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Vehicle Number</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>AP04582C</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Company</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Axis Bank Fastag</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Recharge Amount</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>97.00</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>
+                                                    Convenience Fee
+                                                </h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>3.00</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>
+                                                    Total Amount
+                                                </h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>100.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="modal-footer mt-0" style="border-top: transparent;">
+                                      <div class="container">
+                                        <div class="row">
+                                            <div class="">
+                                              <button type="button" class="btn btn-primary col-12" data-bs-toggle="modal" data-bs-target="#exampleModalProceedtoPay">
+                                                Proceed to Pay
+                                              </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+                            </div>
+                          </form>
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-11">
+                                  <div class="Gst-text text-end">
+                                    <span class="text-danger">Previous Recharge Plan:</span>₹299.00 GST: ₹15.00
+                                  </div>
+                                </div>
+                                <div class="col-lg-1"></div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-gas" role="tabpanel" aria-labelledby="pills-gas-tab" tabindex="0">
+                      <div class="container-fluid">
+                        <div class="card p-4">
+                          <h4>Gas Bills</h4>
+                          <form class="row g-3 needs-validation align-items-center" novalidate>
+                            <div class="col-12 col-md-6 col-lg-3 ">
+                              <label for="validationselect" class="form-label">Company Name</label>
+                              <select class="form-select" id="validationselect">
+                                <option selected>Select Company Name</option>
+                                  <option value="">Gujarat Gas Limited</option>
+                                  <option value="">Adani Gas - Gujarat</option>
+                                  <option value="">Adani Gas - Haryana</option>
+                                  <option value="">Haryana City Gas</option>
+                                  <option value="">Mahanagar Gas</option>
+                                  <option value="">Sabarmati Gas Limited</option>
+                                  <option value="">Vododara Gas Limited</option>
+                              </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2">
+                              <label for="validationMobileNumber" class="form-label">Sub Number</label>
+                              <input type="tel" class="form-control" id="validationMobileNumber" value="934567" placeholder="Enter Sub Number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                              <label for="validationAmount" class="form-label">Customer Mobile Number</label>
+                              <input type="tel" class="form-control" id="validationAmount" value="" placeholder="Enter Customer Mobile Number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2">
+                              <label for="validationTpin" class="form-label">Enter Amount</label>
+                              <input type="text" class="form-control" id="validationTpin" value="" placeholder="Enter Amount">
+                            </div>
+                            <div class="col-md-12 col-md-12 col-lg-2 mt-5">
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalgas">
+                                Pay Bill
+                              </button>
+                              <!---Modal-->
+                              <div class="modal fade" id="exampleModalgas" tabindex="-1" aria-labelledby="exampleModallabelgas" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header ">
+                                      <div class="modal-title mx-auto" id="staticBackdropLabel">
+                                        <div class="dot1 text-center">
+                                          <span> <i class="bi bi-check-circle-fill fs-1 text-success"></i></span>
+                                      </div>
+                                    </div>
+                                      <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body mb-0">
+                                      <div class="container">
+                                        <h5 class="text-center mb-3">Payment Successful</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Date & Time</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>01/03/2024, 03:45PM</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Sub Number</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>9348975673</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Customer Mobile Number</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>9393808034</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Company</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Gujarat Gas Limited</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Payment Amount</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>540</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Payment Status</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-success">Success</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="modal-footer mt-0" style="border-top: transparent;">
+                                      <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-primary w-100 mt-3" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-success w-100 mt-3 ">Print</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-insurance" role="tabpanel" aria-labelledby="pills-insurance-tab" tabindex="0">insurance</div>
+                    <div class="tab-pane fade text-white" id="pills-paymentgateway" role="tabpanel" aria-labelledby="pills-paymentgateway-tab" tabindex="0">
+                      <div class="container">
+                          <div class="card p-3">
+                              <div class="row mb-3">
+                                  <h4>Payment Gateway-PG
+                                    <span class="text-success mx-3">
+                                        <b>
+                                            IM-R-041080</b>
+                                    </span>
+                                </h4>
+                              </div>
+                              <div class="row align-items-center mb-3">
+                                   <div class="col-md-3">
+                                       <h6 class="border p-3 rounded">
+                                        <img src="images/mobile-tab.svg" alt=""> <span class="fw-700 fs-5">PG - TEZ 2 (Postpaid)</span>
+                                      </h6>
+                                   </div>
+                                   <div class="col-md-9"></div>
+                              </div>
+                              <form action="">
+                                  <div class="row">
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Card Type *</label>
+                                        <select name="" id="" class="form-select">
+                                            <option value="" class="form-option">Card</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Card Bin Number *</label>
+                                        <input type="tel" class="form-control" placeholder="431256">  
+                                      </div>
+                                  </div> 
+                                  <div class="row">
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Payment Method *</label>
+                                        <select name="" id="" class="form-select">
+                                            <option value="" class="form-option">Debit Card</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Card Holder Name *</label>
+                                        <input type="text" class="form-control" placeholder="Enter Card Holder Name">
+                                      </div>
+                                  </div> 
+                                  <div class="row">
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Card Holder Mobile Number *</label>
+                                        <input
+                                            type="tel"
+                                            class="form-control"
+                                            placeholder="Enter Customer Mobile Number">
+                                      </div>
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Amount *</label>
+                                        <input type="tel" class="form-control" placeholder="Enter Amount">
+                                      </div>
+                                  </div> 
+                                  <div class="row">
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Confirm Amount *</label>
+                                        <input type="tel" class="form-control" placeholder="Confirm Amount">
+                                      </div>
+                                      <div class="col-12 col-md-6 mb-3">
+                                        <label for="">Narration *</label>
+                                        <input type="tel" class="form-control" placeholder="Narration">
+                                      </div>
+                                  </div> 
+                                  <div class="row mb-2">
+                                      <div class="col-md-10"></div>
+                                      <div class="col-md-2">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModaldetails">
+                                          Get Bin Details
+                                      </button>
+                                      </div>
+                                      <!-- modal popup-->
+                                      <div
+                                      class="modal fade centered"
+                                      id="exampleModaldetails"
+                                      tabindex="-1"
+                                      aria-labelledby="exampleModalLabelgetwaydetails"
+                                      aria-hidden="true">
+                                      <div class="modal-dialog modal-xl">
+                                          <div class="modal-content">
+                                              <div class="modal-heade">
+                                                  <div class="container mt-4">
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <h5>IM-R-041080</h5>
+                                                          </div>
+                                                          <div class="col-md-6 text-end">
+                                                              <button
+                                                                  type="button"
+                                                                  class="btn-close"
+                                                                  data-bs-dismiss="modal"
+                                                                  aria-label="Close"></button>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="container text-center mt-3">
+                                                      <img src="images/logoo.svg" alt="">
+                                                  </div>
+                                                  <div class="container text-center mt-3">
+                                                      <div class="dot1 text-center">
+                                                          <span> <i class="bi bi-check-circle-fill fs-1 text-success"></i></span>
+                                                      </div>
+                                                      <h4 class="mt-3">Transaction Amount!</h4>
+                                                      <h4>
+                                                          <b class="mt-2">INR 1,000,000</b>
+                                                      </h4>
+                                                      <p class="mt-2">09-02-2024 19:45:38</p>
+                                                  </div>
+                                                  <hr>
+                                              </div>
+                                              <div class="modal-body">
+                                                  <div class="container">
+                                                      <div class="row">
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Transaction Status</h6>
+                                                              <p >
+                                                                  <b>Success</b>
+                                                              </p>
+                                                          </div>
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Transaction Amount</h6>
+                                                              <p>
+                                                                  <b>70833</b>
+                                                              </p>
+                                                          </div>
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Outlet Name</h6>
+                                                              <p>
+                                                                  <b>
+                                                                      Finasure Solutions IM-R-041080
+                                                                  </b>
+                                                              </p>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="container">
+                                                      <div class="row mt-3">
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Transaction ID</h6>
+                                                              <p>
+                                                                  <b>
+                                                                      clce4c6e8f0cf479fcc0dfd521b4659</b>
+                                                              </p>
+                                                          </div>
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Account Number</h6>
+                                                              <p>
+                                                                  <b>
+                                                                      THANNIRU
+                                                                  </b>
+                                                              </p>
+                                                          </div>
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">IFSC Code</h6>
+                                                              <p>
+                                                                  <b>
+                                                                      HDFC0002350</b>
+                                                              </p>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="container">
+                                                      <div class="row mt-3">
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Bank Name</h6>
+                                                              <p>
+                                                                  <b>
+                                                                      HDFC Bank</b>
+                                                              </p>
+                                                          </div>
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Sub Product
+                                                              </h6>
+                                                              <p>
+                                                                  <b>Payout4</b>
+                                                              </p>
+                                                          </div>
+                                                          <div class="col-md-12 col-xl-4 col-lg-12 col-sm-12">
+                                                              <h6 class="text-secondary">Transaction Type</h6>
+                                                              <p>
+                                                                  <b>imps</b>
+                                                              </p>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="container mb-3">
+                                                  <div class="row">
+                                                      <div class="col-md-6">
+                                                          <button type="button" class="btn btn-danger w-100 mt-3" data-bs-dismiss="modal">Horizontal Print</button>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <button type="button" class="btn btn-danger w-100 mt-3" data-bs-dismiss="modal">Thermal Print</button>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="container mb-3">
+                                                  <button class="btn btn-success w-100">Raise Ticket</button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+         </div>
+         <!--Start Sticky Icon-->
+         <div class="sticky-icon">
+          <a href="whatsapp.html" class="Whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+              Whatsapp
+          </a>
+        </div>
+     <!--End Sticky Icon-->
+    </div>
+    <!--proceed to pay popup-->
+    <div class="modal fade" id="exampleModalProceedtoPay" tabindex="-1" aria-labelledby="exampleModalRechargeProceedtoPay" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <div class="modal-title mx-auto" id="staticBackdropLabel">
+              <div class="dot1 text-center">
+                <span><i class="bi bi-check-circle-fill fs-1 text-success"></i></span>
+            </div>
+          </div>
+            <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body mb-0">
+            <div class="container">
+              <h5 class="text-center mb-3">Payment Successful</h5>
+              <div class="row">
+                  <div class="col-md-6">
+                      <h6>Vehicle Number</h6>
+                  </div>
+                  <div class="col-md-6">
+                      <p>AP04582C</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <h6>Company</h6>
+                  </div>
+                  <div class="col-md-6">
+                      <p>Axis Bank Fastag</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <h6>Recharge Amount</h6>
+                  </div>
+                  <div class="col-md-6">
+                      <p>97.00</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <h6>Convenience Fee</h6>
+                  </div>
+                  <div class="col-md-6">
+                      <p>3.00</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <h6>Total Amount</h6>
+                  </div>
+                  <div class="col-md-6">
+                      <p>100.00</p>
+                  </div>
+              </div>
+          </div>
+          </div>
+          <div class="modal-footer mt-0" style="border-top: transparent;">
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <button type="button" class="btn btn-primary w-100 mt-3" data-bs-dismiss="modal">Close</button>
+                  </div>
+                  <div class="col-md-6">
+                      <button type="button" class="btn btn-success w-100 mt-3 ">Print</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-------------Tabs end/-------->
+    <div class="container-fluid my-3 epos-container">
+         <div class="container">
+             <div class="card bg-white shadow p-3 border-0">
+                 <div class="row align-items-center">
+                     <div class="col-md-6">
+                        <h4>
+                            <a href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                            <span class="Settlement-text">Payout</span> 
+                        </h4>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="input-group ">
+                            <span class="input-group-text" id="inputGroupPrepend2" style="background-color: #E2E8F0;">
+                                <i class="fa fa-search" aria-hidden="true" style="color: #7E91AA;"></i>
+                            </span>
+                            <input
+                                type="text"
+                                class="form-control px-3"
+                                id="validationDefaultUsername"
+                                aria-describedby="inputGroupPrepend2"
+                                required="required"
+                                placeholder="search" style="background-color: #E2E8F0;">
+                        </div>
+                     </div>
+                     <div class="col-md-3 mb-2">
+                        <button
+                        type="button"
+                        class="btn btn-primary mx-3 mt-2"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">Add Bank</button>
+                          <!-------------------OFFConvas--Add Bank-->
+                          <div
+                          class="offcanvas offcanvas-end"
+                          tabindex="-1"
+                          id="offcanvasRight"
+                          aria-labelledby="offcanvasRightLabel">
+                          <div class="offcanvas-header">
+                              <h5 class="offcanvas-title" id="offcanvasRightLabel">Add Bank</h5>
+                              <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="offcanvas"
+                                  aria-label="Close"></button>
+                          </div>
+                          <div class="container">
+                              <div class="offcanvas-body">
+                                  <form>
+                                      <div class="mb-3">
+                                          <label for="inputEmail3" class="col-form-label">Select Bank</label>
+                                          <select
+                                              class="form-select mb-3"
+                                              aria-label="Large select example"
+                                              style="color: #0C2F54;">
+                                              <option selected="selected">Abhinandan Urban Co.Op. Bank Ltd</option>
+                                              <option selected="selected">Axis Bank Credit Card</option>
+                                              <option selected="selected">Bank of Baroda Credit Card</option>
+                                              <option value="">Canara Bank Credit Card</option>
+                                              <option value="">HDFC Bank Credit Card</option>
+                                              <option value="">ICICI Bank Credit Card</option>
+                                              <option value="">Citi Bank Credit Card</option>
+                                              <option value="">State Bank Credit Card</option>
+                                              <option value="">Union Bank Credit Card</option>
+                                          </select>
+                                      </div>
+                                      <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label">IFSC Code</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              id="exampleFormControlInput1"
+                                              placeholder="HDFC0CMAN01">
+                                      </div>
+                                      <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label">TX ID</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              id="exampleFormControlInput1"
+                                              placeholder="ENter Tx Id">
+                                      </div>
+                                      <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label">Account Name</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              id="exampleFormControlInput1"
+                                              placeholder="">
+                                      </div>
+                                      <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label">Account Number</label>
+                                          <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="exampleFormControlInput1"
+                                              placeholder="Enter Account Number">
+                                      </div>
+                                      <div class="Ticket-submit text-center">
+                                          <button type="submit" class="btn btn-danger px-5">Cancel</button>
+                                          <button type="submit" class="btn btn-success px-5">Submit</button>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                      <!-------------------OFFConvas--Add Bank/-->
+                     </div>
+                 </div>
+                    <div class="row">
+                      <div class="table-responsive mt-3">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="complain-th">
+                                        <th>SL#</th>
+                                        <th>Account Name</th>
+                                        <th>Bank Name</th>
+                                        <th>Account No</th>
+                                        <th>IFSC Code</th>
+                                        <th>Transfer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="complain-td">
+                                        <td>1</td>
+                                        <td>Mr. BOMMAREDDY SRINIVASA REDDY</td>
+                                        <td >State Bank of India(SBI)</td>
+                                        <td>31884693247</td>
+                                        <td>SBIN0014446</td>
+                                        <td>
+                                            <select name="" id="" class="form-select">
+                                                <option value="">IMPS</option>
+                                                <option value="">NEFT</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr class="complain-td">
+                                        <td>2</td>
+                                        <td>Mr. SURISETTY SASIKUMAR</td>
+                                        <td>State Bank of India(SBI)</td>
+                                        <td>41084412025</td>
+                                        <td>SBIN0014446</td>
+                                        <td>
+                                            <select name="" id="" class="form-select">
+                                                <option value="">IMPS</option>
+                                                <option value="">NEFT</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr class="complain-td">
+                                        <td>3</td>
+                                        <td>Mr. ADAPA LAKSHMANA RAO</td>
+                                        <td>State Bank of India(SBI)</td>
+                                        <td>31954833471</td>
+                                        <td>SBIN0014446</td>
+                                        <td>
+                                            <select name="" id="" class="form-select">
+                                                <option value="">IMPS</option>
+                                                <option value="">NEFT</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr class="complain-td">
+                                        <td>4</td>
+                                        <td>MAHALI VENKATA RAJU</td>
+                                        <td>AXIS BANK</td>
+                                        <td>921020049512359</td>
+                                        <td>UTIB0002744</td>
+                                        <td>
+                                            <select name="" id="" class="form-select">
+                                                <option value="">IMPS</option>
+                                                <option value="">NEFT</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr class="complain-td">
+                                        <td>5</td>
+                                        <td>Mr. TANNIRU GOPI</td>
+                                        <td>State Bank of India(SBI)</td>
+                                        <td>37032551594</td>
+                                        <td>SBIN0014446</td>
+                                        <td>
+                                            <select name="" id="" class="form-select">
+                                                <option value="">IMPS</option>
+                                                <option value="">NEFT</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                       </div>
+                    </div>
+             </div>
+         </div>
+    </div>
+      <!-- BOOKING TICKET -->
+      <div class="container mb-3">
+        <div class="row">
+            <div class="col-md-3 col-6 mt-2">
+                <div class="card p-3 box-shadow">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-xl-4 col-sm-12">
+                            <img src="images/flight.svg" alt="" class="grow h-100">
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-xl-8 col-sm-12 align-self-center mt-2">
+                            <h4 class="text-violet">Flight Ticket</h4>
+                            <p class="text-violet">Booking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mt-2">
+                <div class="card p-3 box-shadow">
+                    <div class="row">
+                        <div class="col-md-12 col-md-4 col-lg-12 col-xl-4 col-sm-12">
+                            <img src="images/train.svg" alt="" class="grow h-100">
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-xl-8 col-sm-12 align-self-center mt-2">
+                            <h4 class="text-violet">Bus Ticket</h4>
+                            <p class="text-violet">Booking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mt-2 ">
+                <div class="card p-3 box-shadow">
+                    <div class="row">
+                        <div class="col-md-12 col-md-4 col-lg-12 col-xl-4 col-sm-12">
+                            <img src="images/cms.svg" alt="" class="grow h-100">
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-xl-8 col-sm-12 align-self-center mt-2">
+                            <h4 class="text-dark-pnk">CMS</h4>
+                            <p class="text-dark-pnk">Collect Payment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mt-2">
+                <div class="card p-3 box-shadow">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-4 col-xl-4 col-sm-12">
+                            <img src="images/mark.svg" alt="" class="grow">
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-xl-8 col-sm-12 align-self-center mt-2">
+                            <h4 class="text-drk-vilt">Whole Sale</h4>
+                            <p class="text-drk-vilt">Market</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- BOOKING TICKET END/ -->
+
+      <!-- CARDS -->
+      <div class="container mt-4">
+        <div class="row" id="loancard">
+            <div class="col-md-4 mb-2">
+                <div class="card" style="background: #ED2D3C;">
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-8 col-6">
+                            <div class="card-body">
+                                <h6 class="card-title">Get upto ₹100 cashback*
+                                    <br>
+                                    in your Paytm Wallet</h6>
+                                <p class="card-text">on transaction of ₹99 and above<br>
+                                    using Paytm UPI or Wallet
+                                </p>
+                                <div class="recharge mb-3">
+                                    <a href="#" class="recharge-now">recharge now
+                                        <i class="bi bi-chevron-double-right"></i>
+                                    </a>
+                                </div>
+                                <p class="card-text">
+                                    <small class="text-body-secondary text-white">*For first ever recharge on Vi, T&C apply</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-6 my-auto">
+                            <img src="images/card-mobile.png" class="img-fluid rounded-start h-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-2">
+                <div class="card" style="background: #2A2B3D">
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-8 col-6">
+                            <div class="card-body">
+                                <h6 class="card-title">Watch T20 live with Vi
+                                    <br>@ NO extra cost
+                                </h6>
+                                <p class="card-text">Don’t miss the action!</p>
+                                <div class="recharge mb-3">
+                                    <button class="btn btn-danger" style="background: #ED303B;">
+                                        <a href="#" class="recharge-now">Get now<i class="bi bi-chevron-double-right"></i>
+                                        </a>
+                                    </button>
+                                </div>
+                                <p class="card-text">
+                                    <small class="text-body-secondary text-white">*T&C Apply, visit myvi.in to know more</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-6">
+                            <img src="images/cricket-ground.png" class="img-fluid rounded-start h-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-2">
+                <div class="card" style="background: #ED2D3C;">
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-8 col-6">
+                            <div class="card-body">
+                                <h6 class="card-title">Get assured cashback*
+                                    <br>
+                                    up to ₹100
+                                </h6>
+                                <p class="card-text">Offer valid on unlimited daily<br>
+                                    data packs starting ₹100
+                                </p>
+                                <div class="recharge mb-3">
+                                    <a href="#" class="recharge-now">recharge now
+                                        <i class="bi bi-chevron-double-right"></i>
+                                    </a>
+                                </div>
+                                <p class="card-text">
+                                    <small class="text-body-secondary text-white">*Offer valid for a limited period T&C apply.</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-6 cashback my-auto">
+                            <img src="images/cashback.png" class="img-fluid rounded-start h-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- CARDS END/-->
+
+       <!-- scanner modal -->
+    <div
+    class="modal fade w-100"
+    id="exampleModalscanner"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabelscanner"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="exampleModalLabelscanner">My QR Code</h3>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="" class="text-danger">NOTES:</label>
+                <ol class="text-danger">1.
+                    <span class="text-success">
+                        Rs.2+(18% GST)</span>
+                    on every transaction.</ol>
+                <ol class="text-danger">2. 3%+GST on Credit Card to UPI transaction.</ol>
+                <ol class="text-danger">3. Please do not use Airtel Payment Bank</ol>
+                <ol class="text-danger">4. Use QR Code for transactions below 1,00,000 only</ol>
+            </div>
+            <div class="container text-center">
+                <img src="images/scanner.svg" alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- scanner modal End/-->
+
+     <!-- Modal Emi-->
+  <div class="modal fade shadow" id="exampleModalEmi" tabindex="-1" aria-labelledby="exampleModalLabelEmi" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title fs-5" id="exampleModalLabelEmi">EMI Calculator</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div id="border">   <!--border-->
+                    <div id="emi-calculation p-4">    <!--calculation part-->
+                         <div class="row">
+                            <div class="section">         <!--loan amount with input-->
+                                <label id="loanamount" class="label">Loan Amount:(USD)</label>
+                                <input type="number" class="input" id="value1" placeholder="Enter Loan amount.."></input>
+                            </div>                        <!--loan amount with input closing-->
+                         </div>
+                         <div class="row">
+                            <div class="section">   <!--interest rate with input-->
+                                <label id="interestrate" class="label">Interest Rate:(%)</label>
+                                <input type="number" class="input" id="value2" placeholder="Enter IR per year.."></input>
+                            </div>              <!--interest rate with input closing-->
+                         </div>
+                          <div class="row">
+                            <div class="section"> <!--loan terms with input-->
+                                <label id="loanduration" class="label">Loan Duration(Months):</label>
+                                <input type="number" class="input" id="value3" placeholder="Enter loan duration.."></input>
+                            </div>   <!--loan terms with input closing-->
+                          </div>
+                           <div class="row">
+                            <div class="submit">           <!--button-->
+                                <button type="submit" class="btn btn-primary" id="calc" onclick="calculation()">Calculate</button>
+                            </div>                          <!--button closing-->
+                           </div>
+                    </div>    <!--Calculation part closing-->
+
+                    <div class="container" id="emi-output">
+                      <div class="result">Monthly Interest: <span id="monthly-interest"></span>
+                      </div>
+                      <div class="result">Monthly Payment: <span id="monthly-payment"></span>
+                      </div>
+                      <div class="result">Total Repayment: <span id="total-repayment"></span>
+                      </div>
+                      <div class="result">Total Interest Cost: <span id="total-interest"></span>
+                      </div>
+                    <div class="submit my-2">           <!--button-->
+                 <button type="submit" class="btn btn-primary" id="reset" onclick="reset()">Reset</button>
+                  </div>                          <!--button closing-->  
+                    </div>
+                  </div> <!--border closing-->
+             </div>
+        </div>
+      </div>
+    </div>
+  </div>
+     <!-- profile -->
+     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+     <script>
+        let profile = document.querySelector('.profile');
+        let menu = document.querySelector('.menu');
+        profile.onclick = function () {
+        menu.classList.toggle('active');
+  }
+  </script>
+  <!-- profile End/-->
+    <script>
+        let usersSection=document.querySelector(".animatedviewplan");
+        function showHiderUsers(){
+          usersSection.classList.toggle("hide")
+        }
+       // alert success infor 
+    var Alert = undefined;
+    (function (Alert) {
+        var alert,
+            error,
+            trash,
+            info,
+            success,
+            warning,
+            _container;
+        info = function (message, title, options) {
+            return alert("info", message, title, "fa fa-check-circle", options);
+        };
+        warning = function (message, title, options) {
+            return alert("warning", message, title, "fa fa-warning", options);
+        };
+        error = function (message, title, options) {
+            return alert("error", message, title, "fa fa-exclamation-circle", options);
+        };
+        trash = function (message, title, options) {
+            return alert("trash", message, title, "fa fa-trash-o", options);
+        };
+        success = function (message, title, options) {
+            return alert("success", message, title, "fa fa-check-circle", options);
+        };
+        alert = function (type, message, title, icon, options) {
+            var alertElem,
+                messageElem,
+                titleElem,
+                iconElem,
+                innerElem,
+                _container;
+            if (typeof options === "undefined") {
+                options = {};
+            }
+            options = $.extend({}, Alert.defaults, options);
+            if (!_container) {
+                _container = $("#alerts");
+                if (_container.length === 0) {
+                    _container = $("<ul>")
+                        .attr("id", "alerts")
+                        .appendTo($("body"));
+                }
+            }
+            if (options.width) {
+                _container.css({width: options.width});
+            }
+            alertElem = $("<li>")
+                .addClass("alert")
+                .addClass("alert-" + type);
+            setTimeout(function () {
+                alertElem.addClass('open');
+            }, 1);
+            if (icon) {
+                iconElem = $("<i>").addClass(icon);
+                alertElem.append(iconElem);
+            }
+            innerElem = $("<div>").addClass("alert-block");
+            //innerElem = $("<i>").addClass("fa fa-times");
+            alertElem.append(innerElem);
+            if (title) {
+                titleElem = $("<div>")
+                    .addClass("alert-title")
+                    .append(title);
+                innerElem.append(titleElem);
+            }
+            if (message) {
+                messageElem = $("<div>")
+                    .addClass("alert-message")
+                    .append(message);
+                //innerElem.append("<i class="fa fa-times"></i>");
+                innerElem.append(messageElem);
+                // innerElem.append("<em>Click to Dismiss</em>");      innerElemc =
+                // $("<i>").addClass("fa fa-times");
+            }
+            if (options.displayDuration > 0) {
+                setTimeout((function () {
+                    leave();
+                }), options.displayDuration);
+            } else {
+                innerElem.append("<em>Click to Dismiss</em>");
+            }
+            alertElem.on("click", function () {
+                leave();
+            });
+            function leave() {
+                alertElem.removeClass('open');
+                alertElem.one(
+                    'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionen' +
+                            'd',
+                    function () {
+                        return alertElem.remove();
+                    }
+                );
+            }
+            return _container.prepend(alertElem);
+        };
+        Alert.defaults = {
+            width: "",
+            icon: "",
+            displayDuration: 3000,
+            pos: ""
+        };
+        Alert.info = info;
+        Alert.warning = warning;
+        Alert.error = error;
+        Alert.trash = trash;
+        Alert.success = success;
+        return _container = void 0;
+    })(Alert || (Alert = {}));
+    this.Alert = Alert;
+    $('#test').on('click', function () {
+        Alert.info('Message');
+    }); 
+    </script>
+    <!-------------Bootstrap js cdn --> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <!-- alert js success warning -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- custome script  -->
+    <script src="script.js"></script>
+</body>
+</html>

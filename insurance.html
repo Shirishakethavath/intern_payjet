@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance-tab</title>
+    <!--------------Css custome file-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylenavigation.css">
+    <!-------------Bootstrap Css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-------------Bootstrap cdn icon -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!---------Fontawsome cdn icon--->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="images/favicon.svg" rel="icon"/>
+    <style>
+        button#pills-car-tab.nav-link, button#pills-bike-tab.nav-link,button#pills-home-tab.nav-link,
+        button#pills-life-tab.nav-link,button#pills-health-tab.nav-link{
+            background-color: #fff!important;
+            color:#000;
+        }
+        .nav-pills.nav-link:hover {
+          border-radius: var(--bs-nav-pills-border-radius);
+        }
+        #pills-tab .nav-link.active{
+        border: 2px solid var(--bs-orange);
+        color: var(--bs-orange);
+       }
+      #pills-tab .nav-link.active:hover{
+        border: 2px solid var(--bs-orange);
+        color: var(--bs-orange);
+      }
+      .nav-tabs .nav-link {
+        margin-bottom: calc(-1* var(--bs-nav-tabs-border-width));
+        border: var(--bs-nav-tabs-border-width) solid transparent;
+        border-top-left-radius: var(--bs-nav-tabs-border-radius);
+        border-top-right-radius: var(--bs-nav-tabs-border-radius);
+        color: black!important;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+        margin-right: 8px;
+            margin-bottom:15px;
+            border: transparent;
+    }
+        .nav-tabs .nav-link.active{
+          background-color: green!important;  
+          color:#fff!important;
+        }
+        .nav-tabs .nav-link.active:hover{
+          background-color: green!important;  
+          color:#fff!important;
+        }
+        
+    #specifyColor {
+    accent-color: #e2661f !important;
+   }
+   .hidden{
+    display: none;
+   }
+   
+   .zoom-in-zoom-out {
+     animation: zoom-in-zoom-out 2s ease-out infinite;
+    }
+
+    @keyframes zoom-in-zoom-out {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.5, 1.5);
+        color:red;
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+   @media only screen and (max-width:561px){
+    button#pills-car-tab.nav-link, button#pills-bike-tab.nav-link,button#pills-home-tab.nav-link,
+        button#pills-life-tab.nav-link,button#pills-health-tab.nav-link{
+           margin-bottom: 5px;
+      
+   }
+   }
+   @media only screen and (max-width:768px) {
+    #myTab button.nav-link{
+     margin-bottom: 5px;
+   }
+   }
+    </style>
+</head>
+<body>
+   <section class="insurance-container bg-dark py-5">
+     <div class="container">
+          <div class="row">
+               <h4 class="text-white mb-5">
+                  <a href="#"><i class="bi bi-chevron-left text-white"></i></a>
+                  Insurance
+               </h4>
+               <div class="col-md-12">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item me-3" role="presentation">
+                      <button class="nav-link active" id="pills-car-tab" data-bs-toggle="pill" data-bs-target="#pills-car" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-car"></i> Car</button>
+                    </li>
+                    <li class="nav-item me-3" role="presentation">
+                      <button class="nav-link" id="pills-bike-tab" data-bs-toggle="pill" data-bs-target="#pills-bike" type="button" role="tab" aria-controls="pills-bike" aria-selected="false"><i class="fa-solid fa-motorcycle"></i> Bike</button>
+                    </li>
+                    <li class="nav-item me-3" role="presentation">
+                      <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false"><i class="fa-solid fa-house"></i> Home</button>
+                    </li>
+                    <li class="nav-item me-3" role="presentation">
+                        <button class="nav-link" id="pills-life-tab" data-bs-toggle="pill" data-bs-target="#pills-life" type="button" role="tab" aria-controls="pills-life" aria-selected="false"><i class="fa-solid fa-heart-pulse zoom-in-zoom-out"></i> Life</button>
+                      </li>
+                    <li class="nav-item me-3" role="presentation">
+                        <button class="nav-link" id="pills-health-tab" data-bs-toggle="pill" data-bs-target="#pills-health" type="button" role="tab" aria-controls="pills-health" aria-selected="false"><i class="fa-solid fa-heart-pulse zoom-in-zoom-out"></i> Health</button>
+                      </li>
+                  </ul>
+                  <div class="tab-content text-white" id="pills-tabContent">
+                    <h5 class="text-white mt-5 mb-3">Get Plan From Multiple Insurance</h5>
+                    <div class="tab-pane fade show active" id="pills-car" role="tabpanel" aria-labelledby="pills-car-tab" tabindex="0">
+                       <div class="container">
+                        <div class="card">
+                          <div class="container">
+                              <form action="" class="py-4 px-2">
+                               <label class="me-2">
+                                   <input
+                                       type="radio"
+                                       name="choice1"
+                                       value="yes1"
+                                       id="specifyColor" checked
+                                       onclick="showDiv1('yes1')">
+                                   Pay
+                               </label>
+                               <label>
+                                   <input
+                                       type="radio"
+                                       name="choice1"
+                                       value="no1"
+                                       id="specifyColor"
+                                       onclick="showDiv1('no1')">
+                                   Buy
+                               </label>
+                              </form>
+                              <!----------Pay tab-->
+                                 <div id="paycarradio" class="">
+                                   <div class="container-fluid">
+                                     <ul class="nav nav-tabs border-bottom-0" id="myTab" role="tablist">
+                                         <li class="nav-item" role="presentation">
+                                           <button class="nav-link active" id="RenewInsurancecar-tab" data-bs-toggle="tab" data-bs-target="#RenewInsurancecar-tab-pane" type="button" role="tab" aria-controls="RenewInsurancecar-tab-pane" aria-selected="true">Renew Insurance</button>
+                                         </li>
+                                         <li class="nav-item" role="presentation">
+                                           <button class="nav-link" id="UsedCar-tab" data-bs-toggle="tab" data-bs-target="#UsedCar-tab-pane" type="button" role="tab" aria-controls="UsedCar-tab-pane" aria-selected="false">Used Car</button>
+                                         </li>
+                                         <li class="nav-item" role="presentation">
+                                           <button class="nav-link" id="Expiredcar-tab" data-bs-toggle="tab" data-bs-target="#Expiredcar-tab-pane" type="button" role="tab" aria-controls="Expiredcar-tab-pane" aria-selected="false">Policy Expired</button>
+                                         </li>
+                                         <li class="nav-item" role="presentation">
+                                           <button class="nav-link" id="NewCarInsurance-tab" data-bs-toggle="tab" data-bs-target="#NewCarInsurance-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">New Car Insurance</button>
+                                         </li>
+                                       </ul>
+                                       <div class="tab-content" id="myTabContent">
+                                         <div class="tab-pane fade show active" id="RenewInsurancecar-tab-pane" role="tabpanel" aria-labelledby="RenewInsurancecar-tab" tabindex="0">
+                                             <div class="container">
+                                                 <form class="g-3 mt-2">
+                                                     <div class="row align-items-center">
+                                                     <div class="col-md-5">
+                                                       <label for="Registration-number" class="form-label">Registration Number</label>
+                                                       <input type="tel" class="form-control" id="Registration-number" placeholder="Enter registration no" required>
+                                                     </div>
+                                                     <div class="col-md-4 mt-4">
+                                                         <button type="button" class="btn btn-primary">Get Vehicle Details</button>
+                                                     </div>
+                                                     </div>
+                                                       <h6 class="my-3">Or Provide details below to proceed</h6>
+                                                      <div class="row my-3">
+                                                         <div class="col-md-6">
+                                                             <label for="" class="form-label">Registration Year</label>
+                                                             <select class="form-select" id="">
+                                                                 <option value="">Select Registration Year</option>
+                                                                 <option value="">2024</option>
+                                                                 <option value="">2023</option>
+                                                                 <option value="">2022</option>
+                                                                 <option value="">2021</option>
+                                                                 <option value="">2020</option>
+                                                                 <option value="">2019</option>
+                                                                 <option value="">2018</option>
+                                                                 <option value="">2017</option>
+                                                             </select>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                             <label for="" class="form-label">Make / Model</label>
+                                                             <select class="form-select" id="">
+                                                                 <option value="">Select Make / Model</option>
+                                                                 <option>Maruti Alto K10</option>
+                                                                 <option>Maruti Jimny</option>
+                                                                 <option>Maruti Zen</option>
+                                                                 <option>Maruti 800</option>
+                                                                 <option>Maruti 1000</option>
+                                                                 <option>Maruti 1000</option>
+                                                                 <option>Maruti Swift</option>
+                                                                 <option>Maruti SX4</option>
+                                                               </select>
+                                                          </div>
+                                                      </div>
+                                                      <div class="row my-3">
+                                                         <div class="col-md-6">
+                                                             <label for="" class="form-label">Fuel Type</label>
+                                                             <select class="form-select" id="">
+                                                                 <option value="">Select Fuel Type</option>
+                                                                 <option>Petrol</option>
+                                                                 <option>Diesel</option>
+                                                                 <option>Electric</option>
+                                                                 <option>CNG/LPG Externally Fitted</option>
+                                                               </select>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                             <label for="" class="form-label">Variant</label>
+                                                             <select class="form-select" id="">
+                                                                 <option value="">Select Variant</option>
+                                                                 <option>Alpha (Petrol-1462cc, 5S)</option>
+                                                                 <option>Delta (Petrol-1462cc, 5S)</option>
+                                                                 <option>Sigma (Petrol-1462cc, 5S)</option>
+                                                                 <option>Zeta (Petrol-1462cc, 5S)</option>
+                                                               </select>
+                                                          </div>
+                                                      </div>
+                                                      <div class="row my-3">
+                                                         <div class="col-md-6">
+                                                             <label for="" class="form-label">RTO City</label>
+                                                             <select class="form-select" id="">
+                                                                 <option value="">Select RTO City</option>
+                                                                 <option>Aizawl-MZ01</option>
+                                                                 <option>Aizawl-MZ09</option>
+                                                                 <option>Barara-HR54</option>
+                                                                 <option>Chatra-JH13</option>
+                                                               </select>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                             <label for="" class="form-label">Previous Insurer</label>
+                                                             <select class="form-select" id="">
+                                                                 <option value="">Select Previous Insurer</option>
+                                                                 <option>ACKO</option>
+                                                                 <option>Bajaj Allianz</option>
+                                                                 <option>Digit</option>
+                                                                 <option>HDFC ERGO</option>
+                                                               </select>
+                                                          </div>
+                                                      </div>
+                                                      <div class="row mb-3">
+                                                          <div class="col-md-10"></div>
+                                                          <div class="col-md-2">
+                                                           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalconfrimcar">
+                                                             Get Quote
+                                                         </button>
+                                                              <!----modal-->
+                                                              <div class="modal fade" id="exampleModalconfrimcar" tabindex="-1" aria-labelledby="exampleModallabelconfrimcar" aria-hidden="true">
+                                                               <div class="modal-dialog">
+                                                                 <div class="modal-content">
+                                                                   <div class="modal-header ">
+                                                                     <div class="modal-title" id="staticBackdropLabel">
+                                                                       <h5>Confirm Information</h5>
+                                                                     </div>
+                                                                     <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                   </div>
+                                                                   <div class="modal-body mb-0">
+                                                                       <div class="container">
+                                                                          <div class="row">
+                                                                              <form action="">
+                                                                                 <label class="mt-3" for="">Registration Date</label>
+                                                                                 <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                                 <label class="mt-3" for="">Manufacturing Date</label>
+                                                                                 <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                                 <label class="mt-3" for="">Pervious Policy Expiry Date</label>
+                                                                                 <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                                 <p class="mt-2">
+                                                                                     <b>Made a claim in your existing policy?</b>
+                                                                                 </p>
+                                                                                 <p>Disclaimer: No ownership change happend in the 12 months!</p>
+                                                                                 
+                                                                                     <button class="btn btn-primary w-100"><a href="car-insurancetab03.html">Continue</a></button>
+                                                                                  
+                                                                              </form>
+                                                                          </div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                             </div>
+                                                             </div>
+                                                              <!----modal end-->
+                                                          </div>
+                                                      </div>
+                                                   </form>
+                                             </div>
+                                         </div>
+                                         <div class="tab-pane fade" id="UsedCar-tab-pane" role="tabpanel" aria-labelledby="UsedCar-tab" tabindex="0">
+                                           <div class="container">
+                                             <form class="g-3 mt-2">
+                                                 <div class="row align-items-center">
+                                                 <div class="col-md-5">
+                                                   <label for="Registration-number" class="form-label">Registration Number</label>
+                                                   <input type="tel" class="form-control" id="Registration-number" placeholder="Enter registration no" required>
+                                                 </div>
+                                                 <div class="col-md-4">
+                                                     <button type="button" class="btn btn-primary">Get Vehicle Details</button>
+                                                 </div>
+                                                 </div>
+                                                 <h6 class="my-3">Or Provide details below to proceed</h6>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">Registration Year</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Registration Year</option>
+                                                             <option value="">2024</option>
+                                                             <option value="">2023</option>
+                                                             <option value="">2022</option>
+                                                             <option value="">2021</option>
+                                                             <option value="">2020</option>
+                                                             <option value="">2019</option>
+                                                             <option value="">2018</option>
+                                                             <option value="">2017</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Make / Model</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Make / Model</option>
+                                                             <option>Maruti Alto K10</option>
+                                                             <option>Maruti Jimny</option>
+                                                             <option>Maruti Zen</option>
+                                                             <option>Maruti 800</option>
+                                                             <option>Maruti 1000</option>
+                                                             <option>Maruti 1000</option>
+                                                             <option>Maruti Swift</option>
+                                                             <option>Maruti SX4</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">Fuel Type</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Fuel Type</option>
+                                                             <option>Petrol</option>
+                                                             <option>Diesel</option>
+                                                             <option>Electric</option>
+                                                             <option>CNG/LPG Externally Fitted</option>
+                                                           </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Variant</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Variant</option>
+                                                             <option>Alpha (Petrol-1462cc, 5S)</option>
+                                                             <option>Delta (Petrol-1462cc, 5S)</option>
+                                                             <option>Sigma (Petrol-1462cc, 5S)</option>
+                                                             <option>Zeta (Petrol-1462cc, 5S)</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">RTO City</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select RTO City</option>
+                                                             <option>Aizawl-MZ01</option>
+                                                             <option>Aizawl-MZ09</option>
+                                                             <option>Barara-HR54</option>
+                                                             <option>Chatra-JH13</option>
+                                                           </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Previous Insurer</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Previous Insurer</option>
+                                                             <option>ACKO</option>
+                                                             <option>Bajaj Allianz</option>
+                                                             <option>Digit</option>
+                                                             <option>HDFC ERGO</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row mb-3">
+                                                      <div class="col-md-10"></div>
+                                                      <div class="col-md-2">
+                                                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalconfrimusedcar">
+                                                         Get Quote
+                                                     </button>
+                                                          <!----modal-->
+                                                          <div class="modal fade" id="exampleModalconfrimusedcar" tabindex="-1" aria-labelledby="exampleModallabelconfrimusedcar" aria-hidden="true">
+                                                           <div class="modal-dialog">
+                                                             <div class="modal-content">
+                                                               <div class="modal-header ">
+                                                                 <div class="modal-title" id="staticBackdropLabel">
+                                                                   <h5>Confirm Information</h5>
+                                                                 </div>
+                                                                 <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                               </div>
+                                                               <div class="modal-body mb-0">
+                                                                   <div class="container">
+                                                                      <div class="row">
+                                                                          <form action="">
+                                                                             <label class="mt-3" for="">Registration Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <label class="mt-3" for="">Manufacturing Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <label class="mt-3" for="">Pervious Policy Expiry Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <p class="mt-2">
+                                                                                 <b>Made a claim in your existing policy?</b>
+                                                                             </p>
+                                                                             <p>Disclaimer: No ownership change happend in the 12 months!</p>
+                                                                             <button class="btn btn-primary w-100" id="buttoncar"><a href="car-insurancetab03.html">Continue</a></button>
+                                                                          </form>
+                                                                      </div>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                         </div>
+                                                         </div>
+                                                          <!----modal end-->
+                                                      </div>
+                                                  </div>
+                                               </form>
+                                         </div>
+                                         </div>
+                                         <div class="tab-pane fade" id="Expiredcar-tab-pane" role="tabpanel" aria-labelledby="Expiredcar-tab" tabindex="0">
+                                           <div class="container">
+                                             <form class="g-3 mt-2">
+                                                 <div class="row align-items-center">
+                                                 <div class="col-md-5">
+                                                   <label for="Registration-number" class="form-label">Registration Number</label>
+                                                   <input type="tel" class="form-control" id="Registration-number" placeholder="Enter registration no" required>
+                                                   
+                                                 </div>
+                                                 <div class="col-md-4">
+                                                     <button type="button" class="btn btn-primary">Get Vehicle Details</button>
+                                                 </div>
+                                                 </div>
+                                                  <h6 class="my-3">Or Provide details below to proceed</h6>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">Registration Year</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Registration Year</option>
+                                                             <option value="">2024</option>
+                                                             <option value="">2023</option>
+                                                             <option value="">2022</option>
+                                                             <option value="">2021</option>
+                                                             <option value="">2020</option>
+                                                             <option value="">2019</option>
+                                                             <option value="">2018</option>
+                                                             <option value="">2017</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Make / Model</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Make / Model</option>
+                                                             <option>Maruti Alto K10</option>
+                                                             <option>Maruti Jimny</option>
+                                                             <option>Maruti Zen</option>
+                                                             <option>Maruti 800</option>
+                                                             <option>Maruti 1000</option>
+                                                             <option>Maruti 1000</option>
+                                                             <option>Maruti Swift</option>
+                                                             <option>Maruti SX4</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">Fuel Type</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Fuel Type</option>
+                                                             <option>Petrol</option>
+                                                             <option>Diesel</option>
+                                                             <option>Electric</option>
+                                                             <option>CNG/LPG Externally Fitted</option>
+                                                           </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Variant</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Variant</option>
+                                                             <option>Alpha (Petrol-1462cc, 5S)</option>
+                                                             <option>Delta (Petrol-1462cc, 5S)</option>
+                                                             <option>Sigma (Petrol-1462cc, 5S)</option>
+                                                             <option>Zeta (Petrol-1462cc, 5S)</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">RTO City</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select RTO City</option>
+                                                             <option>Aizawl-MZ01</option>
+                                                             <option>Aizawl-MZ09</option>
+                                                             <option>Barara-HR54</option>
+                                                             <option>Chatra-JH13</option>
+                                                           </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Previous Insurer</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Previous Insurer</option>
+                                                             <option>ACKO</option>
+                                                             <option>Bajaj Allianz</option>
+                                                             <option>Digit</option>
+                                                             <option>HDFC ERGO</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row mb-3">
+                                                      <div class="col-md-10"></div>
+                                                      <div class="col-md-2">
+                                                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalconfrimExpirecar">
+                                                         Get Quote
+                                                     </button>
+                                                          <!----modal-->
+                                                          <div class="modal fade" id="exampleModalconfrimExpirecar" tabindex="-1" aria-labelledby="exampleModallabelconfrimExpirecar" aria-hidden="true">
+                                                           <div class="modal-dialog">
+                                                             <div class="modal-content">
+                                                               <div class="modal-header ">
+                                                                 <div class="modal-title" id="staticBackdropLabel">
+                                                                   <h5>Confirm Information</h5>
+                                                                 </div>
+                                                                 <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                               </div>
+                                                               <div class="modal-body mb-0">
+                                                                   <div class="container">
+                                                                      <div class="row">
+                                                                          <form action="">
+                                                                             <label class="mt-3" for="">Registration Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <label class="mt-3" for="">Manufacturing Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <label class="mt-3" for="">Pervious Policy Expiry Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <p class="mt-2">
+                                                                                 <b>Made a claim in your existing policy?</b>
+                                                                             </p>
+                                                                             <p>Disclaimer: No ownership change happend in the 12 months!</p>
+                                                                             <button class="btn btn-primary w-100"><a href="car-insurancetab03.html">Continue</a></button>
+                                                                          </form>
+                                                                      </div>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                         </div>
+                                                         </div>
+                                                          <!----modal end-->
+                                                      </div>
+                                                  </div>
+                                               </form>
+                                         </div>
+                                         </div>
+                                         <div class="tab-pane fade" id="NewCarInsurance-tab-pane" role="tabpanel" aria-labelledby="NewCarInsurance-tab" tabindex="0">
+                                           <div class="container">
+                                             <form class="g-3 mt-2">
+                                                 <div class="row align-items-center">
+                                                 <div class="col-md-5">
+                                                   <label for="Registration-number" class="form-label">Registration Number</label>
+                                                   <input type="tel" class="form-control" id="Registration-number" placeholder="Enter registration no" required>
+                                                   
+                                                 </div>
+                                                 <div class="col-md-4">
+                                                     <button type="button" class="btn btn-primary">Get Vehicle Details</button>
+                                                 </div>
+                                                 </div>
+                                                 <h6 class="my-3">Or Provide details below to proceed</h6>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">Registration Year</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Registration Year</option>
+                                                             <option value="">2024</option>
+                                                             <option value="">2023</option>
+                                                             <option value="">2022</option>
+                                                             <option value="">2021</option>
+                                                             <option value="">2020</option>
+                                                             <option value="">2019</option>
+                                                             <option value="">2018</option>
+                                                             <option value="">2017</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Make / Model</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Make / Model</option>
+                                                             <option>Maruti Alto K10</option>
+                                                             <option>Maruti Jimny</option>
+                                                             <option>Maruti Zen</option>
+                                                             <option>Maruti 800</option>
+                                                             <option>Maruti 1000</option>
+                                                             <option>Maruti 1000</option>
+                                                             <option>Maruti Swift</option>
+                                                             <option>Maruti SX4</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">Fuel Type</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Fuel Type</option>
+                                                             <option>Petrol</option>
+                                                             <option>Diesel</option>
+                                                             <option>Electric</option>
+                                                             <option>CNG/LPG Externally Fitted</option>
+                                                           </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Variant</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Variant</option>
+                                                             <option>Alpha (Petrol-1462cc, 5S)</option>
+                                                             <option>Delta (Petrol-1462cc, 5S)</option>
+                                                             <option>Sigma (Petrol-1462cc, 5S)</option>
+                                                             <option>Zeta (Petrol-1462cc, 5S)</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row my-3">
+                                                     <div class="col-md-6">
+                                                         <label for="" class="form-label">RTO City</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select RTO City</option>
+                                                             <option>Aizawl-MZ01</option>
+                                                             <option>Aizawl-MZ09</option>
+                                                             <option>Barara-HR54</option>
+                                                             <option>Chatra-JH13</option>
+                                                           </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <label for="" class="form-label">Previous Insurer</label>
+                                                         <select class="form-select" id="">
+                                                             <option value="">Select Previous Insurer</option>
+                                                             <option>ACKO</option>
+                                                             <option>Bajaj Allianz</option>
+                                                             <option>Digit</option>
+                                                             <option>HDFC ERGO</option>
+                                                           </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row mb-3">
+                                                      <div class="col-md-10"></div>
+                                                      <div class="col-md-2">
+                                                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalconfrimNewcar">
+                                                         Get Quote
+                                                     </button>
+                                                          <!----modal-->
+                                                          <div class="modal fade" id="exampleModalconfrimNewcar" tabindex="-1" aria-labelledby="exampleModallabelconfrimNewcar" aria-hidden="true">
+                                                           <div class="modal-dialog">
+                                                             <div class="modal-content">
+                                                               <div class="modal-header ">
+                                                                 <div class="modal-title" id="staticBackdropLabel">
+                                                                   <h5>Confirm Information</h5>
+                                                                 </div>
+                                                                 <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                               </div>
+                                                               <div class="modal-body mb-0">
+                                                                   <div class="container">
+                                                                      <div class="row">
+                                                                          <form action="">
+                                                                             <label class="mt-3" for="">Registration Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <label class="mt-3" for="">Manufacturing Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <label class="mt-3" for="">Pervious Policy Expiry Date</label>
+                                                                             <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                             <p class="mt-2">
+                                                                                 <b>Made a claim in your existing policy?</b>
+                                                                             </p>
+                                                                             <p>Disclaimer: No ownership change happend in the 12 months!</p>
+                                                                             <button class="btn btn-primary w-100"><a href="car-insurancetab03.html">Continue</a></button> 
+                                                                          </form>
+                                                                      </div>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                         </div>
+                                                         </div>
+                                                          <!----modal end-->
+                                                      </div>
+                                                  </div>
+                                               </form>
+                                         </div>
+                                         </div>
+                                       </div>
+                                  </div>  
+                                 </div>
+                                <!----------Pay tab end-->
+                                <!-- buy tab -->
+                                 <div id="buycarradio" class="hidden">
+                                   <div class="container">
+                                     <div class="card p-3 border-0">
+                                         <div class="container">
+                                             <div class="row">
+                                                 <form action="">
+                                                     <h6>Provide details below to proceed</h6>
+                                                     <div class="row mb-2">
+                                                         <div class="col-md-6 form-group">
+                                                             <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                                                             <input
+                                                                 type="name"
+                                                                 class="form-control"
+                                                                 id="exampleFormControlInput1"
+                                                                 placeholder="Enter Full Name">
+                                                         </div>
+                                                         <div class="col-md-6 form-group">
+                                                             <label for="exampleFormControlInput2" class="form-label">Email address</label>
+                                                             <input
+                                                                 type="email"
+                                                                 class="form-control"
+                                                                 id="exampleFormControlInput2"
+                                                                 placeholder="Enter Email Id">
+                                                         </div>
+                                                     </div>
+                                                     <div class="row mb-2">
+                                                         <div class="col-md-6 form-group">
+                                                             <label for="exampleFormControlInput3" class="form-label">Mobile Number *</label>
+                                                             <input
+                                                                 type="tel"
+                                                                 class="form-control"
+                                                                 id="exampleFormControlInput3"
+                                                                 placeholder="Enter Mobile Number">
+                                                         </div>
+                                                         <div class="col-md-6 form-group">
+                                                             <label for="exampleFormControlInput3" class="form-label">Date of Birth</label>
+                                                             <input
+                                                                 type="date"
+                                                                 class="form-control"
+                                                                 id="exampleFormControlInput3"
+                                                                 placeholder="Select Your Date of Birth">
+                                                         </div>
+                                                     </div>
+                                                     <div class="container text-end">
+                                                         <button type="submit" class="btn btn-primary mt-3 py-2">Submit</button>
+                                                     </div>
+                                                 </form>
+                                             </div>
+                                         </div>
+                                     </div>
+                                   </div>
+                                 </div>
+                                <!-- buy tab end -->
+                          </div>
+                      </div>
+                       </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-bike" role="tabpanel" aria-labelledby="pills-bike-tab" tabindex="0">
+                        <div class="container">
+                            <div class="card">
+                              <form action="" class="py-4 px-3">
+                                <label class="me-2">
+                                    <input
+                                        type="radio"
+                                        name="choice2"
+                                        value="yes1"
+                                        id="specifyColor"
+                                        onclick="showDiv2('yes2')">
+                                    Pay
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="choice2"
+                                        value="no1"
+                                        id="specifyColor"
+                                        onclick="showDiv2('no2')">
+                                    Buy
+                                </label>
+                              </form>
+                              <div class="hidden" id="paybikeradio">
+                                <div class="container-fluid">
+                                  <ul class="nav nav-tabs border-bottom-0" id="myTab" role="tablist">
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="RenewInsurancebike-tab" data-bs-toggle="tab" data-bs-target="#RenewInsurancebike-tab-pane" type="button" role="tab" aria-controls="RenewInsurancebike-tab-pane" aria-selected="true">Renew Insurance</button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="Expiredbike-tab" data-bs-toggle="tab" data-bs-target="#Expiredbike-tab-pane" type="button" role="tab" aria-controls="Expiredbike-tab-pane" aria-selected="false">Policy Expired</button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="NewBikeInsurance-tab" data-bs-toggle="tab" data-bs-target="#NewBikeInsurance-tab-pane" type="button" role="tab" aria-controls="NewBikeInsurance-tab-pane" aria-selected="false">New Bike Insurance</button>
+                                      </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                      <div class="tab-pane fade show active" id="RenewInsurancebike-tab-pane" role="tabpanel" aria-labelledby="RenewInsurancebike-tab" tabindex="0">
+                                          <div class="container">
+                                              <form class="g-3 mt-2">
+                                                  <div class="row align-items-center">
+                                                  <div class="col-md-5">
+                                                    <label for="Registration-number" class="form-label">Registration Number</label>
+                                                    <input type="tel" class="form-control" id="Registration-number" placeholder="Enter registration no" required>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                      <button type="button" class="btn btn-primary">Get Vehicle Details</button>
+                                                  </div>
+                                                  </div>
+                                                  <h6 class="my-3"> Or Provide details below to proceed</h6>
+                                                   <div class="row my-3">
+                                                      <div class="col-md-6">
+                                                          <label for="" class="form-label">Registration Year</label>
+                                                          <select class="form-select" id="">
+                                                              <option value="">Select Registration Year</option>
+                                                              <option value="">2024</option>
+                                                              <option value="">2023</option>
+                                                              <option value="">2022</option>
+                                                              <option value="">2021</option>
+                                                              <option value="">2020</option>
+                                                              <option value="">2019</option>
+                                                              <option value="">2018</option>
+                                                              <option value="">2017</option>
+                                                          </select>
+                                                       </div>
+                                                       <div class="col-md-6">
+                                                          <label for="" class="form-label">Make / Model</label>
+                                                          <select class="form-select" id="">
+                                                              <option value="">Select Make / Model</option>
+                                                              <option>Maruti Alto K10</option>
+                                                              <option>Maruti Jimny</option>
+                                                              <option>Maruti Zen</option>
+                                                              <option>Maruti 800</option>
+                                                              <option>Maruti 1000</option>
+                                                              <option>Maruti 1000</option>
+                                                              <option>Maruti Swift</option>
+                                                              <option>Maruti SX4</option>
+                                                            </select>
+                                                       </div>
+                                                   </div>
+                                                   <div class="row my-3">
+                                                      <div class="col-md-6">
+                                                          <label for="" class="form-label">Fuel Type</label>
+                                                          <select class="form-select" id="">
+                                                              <option value="">Select Fuel Type</option>
+                                                              <option>Petrol</option>
+                                                              <option>Diesel</option>
+                                                              <option>Electric</option>
+                                                              <option>CNG/LPG Externally Fitted</option>
+                                                            </select>
+                                                       </div>
+                                                       <div class="col-md-6">
+                                                          <label for="" class="form-label">Variant</label>
+                                                          <select class="form-select" id="">
+                                                              <option value="">Select Variant</option>
+                                                              <option>Alpha (Petrol-1462cc, 5S)</option>
+                                                              <option>Delta (Petrol-1462cc, 5S)</option>
+                                                              <option>Sigma (Petrol-1462cc, 5S)</option>
+                                                              <option>Zeta (Petrol-1462cc, 5S)</option>
+                                                            </select>
+                                                       </div>
+                                                   </div>
+                                                   <div class="row my-3">
+                                                      <div class="col-md-6">
+                                                          <label for="" class="form-label">RTO City</label>
+                                                          <select class="form-select" id="">
+                                                              <option value="">Select RTO City</option>
+                                                              <option>Aizawl-MZ01</option>
+                                                              <option>Aizawl-MZ09</option>
+                                                              <option>Barara-HR54</option>
+                                                              <option>Chatra-JH13</option>
+                                                            </select>
+                                                       </div>
+                                                       <div class="col-md-6">
+                                                          <label for="" class="form-label">Previous Insurer</label>
+                                                          <select class="form-select" id="">
+                                                              <option value="">Select Previous Insurer</option>
+                                                              <option>ACKO</option>
+                                                              <option>Bajaj Allianz</option>
+                                                              <option>Digit</option>
+                                                              <option>HDFC ERGO</option>
+                                                            </select>
+                                                       </div>
+                                                   </div>
+                                                   <div class="row mb-3">
+                                                       <div class="col-md-10"></div>
+                                                       <div class="col-md-2">
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalconfrimcar">
+                                                          Get Quote
+                                                      </button>
+                                                           <!----modal-->
+                                                           <div class="modal fade" id="exampleModalconfrimcar" tabindex="-1" aria-labelledby="exampleModallabelconfrimcar" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                              <div class="modal-content">
+                                                                <div class="modal-header ">
+                                                                  <div class="modal-title" id="staticBackdropLabel">
+                                                                    <h5>Confirm Information</h5>
+                                                                  </div>
+                                                                  <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body mb-0">
+                                                                    <div class="container">
+                                                                       <div class="row">
+                                                                           <form action="">
+                                                                              <label class="mt-3" for="">Registration Date</label>
+                                                                              <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                              <label class="mt-3" for="">Manufacturing Date</label>
+                                                                              <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                              <label class="mt-3" for="">Pervious Policy Expiry Date</label>
+                                                                              <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                              <p class="mt-2">
+                                                                                  <b>Made a claim in your existing policy?</b>
+                                                                              </p>
+                                                                              <p>Disclaimer: No ownership change happend in the 12 months!</p>
+                                                                              <a href="#">
+                                                                                  <button class="btn btn-primary w-100">Continue</button>
+                                                                              </a> 
+                                                                           </form>
+                                                                       </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                          </div>
+                                                          </div>
+                                                           <!----modal end-->
+                                                       </div>
+                                                   </div>
+                                                </form>
+                                          </div>
+                                      </div>
+                                      
+                                      <div class="tab-pane fade" id="Expiredbike-tab-pane" role="tabpanel" aria-labelledby="Expiredbike-tab" tabindex="0">
+                                        <div class="container">
+                                          <form class="g-3 mt-2">
+                                              <div class="row align-items-center">
+                                              <div class="col-md-5">
+                                                <label for="Registration-number" class="form-label">Registration Number</label>
+                                                <input type="tel" class="form-control" id="Registration-number" placeholder="Enter registration no" required>
+                                                
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <button type="button" class="btn btn-primary">Get Vehicle Details</button>
+                                              </div>
+                                              </div>
+                                              <h6 class="my-3"> Or Provide details below to proceed</h6>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Registration Year</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Registration Year</option>
+                                                          <option value="">2024</option>
+                                                          <option value="">2023</option>
+                                                          <option value="">2022</option>
+                                                          <option value="">2021</option>
+                                                          <option value="">2020</option>
+                                                          <option value="">2019</option>
+                                                          <option value="">2018</option>
+                                                          <option value="">2017</option>
+                                                      </select>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Make / Model</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Make / Model</option>
+                                                        <option>Hero HF 100</option>
+                                                        <option>Hero Glamour</option>
+                                                        <option>Hero Honda CBZ </option>
+                                                        <option>Hero Honda CD100</option>
+                                                        <option>Honda Activa 5G</option>
+                                                        <option>Honda Activa 6G</option>
+                                                        <option>TVS Jupiter</option>
+                                                        <option>TVS Jive</option>
+                                                        </select>
+                                                   </div>
+                                               </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Fuel Type</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Fuel Type</option>
+                                                          <option>Petrol</option>
+                                                          <option>Diesel</option>
+                                                          <option>Electric</option>
+                                                        </select>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Variant</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Variant</option>
+                                                          <option>Alpha (Petrol-1462cc, 5S)</option>
+                                                          <option>Delta (Petrol-1462cc, 5S)</option>
+                                                          <option>Sigma (Petrol-1462cc, 5S)</option>
+                                                          <option>Zeta (Petrol-1462cc, 5S)</option>
+                                                        </select>
+                                                   </div>
+                                               </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">RTO City</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select RTO City</option>
+                                                          <option>Aizawl-MZ01</option>
+                                                          <option>Aizawl-MZ09</option>
+                                                          <option>Barara-HR54</option>
+                                                          <option>Chatra-JH13</option>
+                                                        </select>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Previous Insurer</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Previous Insurer</option>
+                                                          <option>ACKO</option>
+                                                          <option>Bajaj Allianz</option>
+                                                          <option>Digit</option>
+                                                          <option>HDFC ERGO</option>
+                                                        </select>
+                                                   </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                   <div class="col-md-10"></div>
+                                                   <div class="col-md-2">
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalconfrimExpirebike">
+                                                      Get Quote
+                                                  </button>
+                                                       <!----modal-->
+                                                       <div class="modal fade" id="exampleModalconfrimExpirebike" tabindex="-1" aria-labelledby="exampleModallabelconfrimExpirebike" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header ">
+                                                              <div class="modal-title" id="staticBackdropLabel">
+                                                                <h5>Confirm Information</h5>
+                                                              </div>
+                                                              <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body mb-0">
+                                                                <div class="container">
+                                                                   <div class="row">
+                                                                       <form action="">
+                                                                          <label class="mt-3" for="">Registration Date</label>
+                                                                          <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                          <label class="mt-3" for="">Manufacturing Date</label>
+                                                                          <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                          <label class="mt-3" for="">Pervious Policy Expiry Date</label>
+                                                                          <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                          <p class="mt-2">
+                                                                              <b>Made a claim in your existing policy?</b>
+                                                                          </p>
+                                                                          <p>Disclaimer: No ownership change happend in the 12 months!</p>
+                                                                          <a href="#">
+                                                                              <button class="btn btn-primary w-100">Continue</button>
+                                                                          </a> 
+                                                                       </form>
+                                                                   </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                                      </div>
+                                                       <!----modal end-->
+                                                   </div>
+                                               </div>
+                                            </form>
+                                      </div>
+                                      </div>
+                                      <div class="tab-pane fade" id="NewBikeInsurance-tab-pane" role="tabpanel" aria-labelledby="NewBikeInsurance-tab" tabindex="0">
+                                        <div class="container">
+                                          <form class="g-3 mt-2">
+                                              <div class="row align-items-center">
+                                              <div class="col-md-5">
+                                                <label for="Registration-number" class="form-label">Registration Number</label>
+                                                <input type="tel" class="form-control" id="Registration-number" placeholder="Enter registration no" required>
+                                                
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <button type="button" class="btn btn-primary">Get Vehicle Details</button>
+                                              </div>
+                                              </div>
+                                              <h6 class="my-3"> Or Provide details below to proceed</h6>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Registration Year</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Registration Year</option>
+                                                          <option value="">2024</option>
+                                                          <option value="">2023</option>
+                                                          <option value="">2022</option>
+                                                          <option value="">2021</option>
+                                                          <option value="">2020</option>
+                                                          <option value="">2019</option>
+                                                          <option value="">2018</option>
+                                                          <option value="">2017</option>
+                                                      </select>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Make / Model</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Make / Model</option>
+                                                          <option>Hero HF 100</option>
+                                                        <option>Hero Glamour</option>
+                                                        <option>Hero Honda CBZ </option>
+                                                        <option>Hero Honda CD100</option>
+                                                        <option>Honda Activa 5G</option>
+                                                        <option>Honda Activa 6G</option>
+                                                        <option>TVS Jupiter</option>
+                                                        <option>TVS Jive</option>
+                                                        </select>
+                                                   </div>
+                                               </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Fuel Type</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Fuel Type</option>
+                                                          <option>Petrol</option>
+                                                          <option>Diesel</option>
+                                                          <option>Electric</option>
+                                                        </select>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Variant</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select Variant</option>
+                                                          <option>Alpha (Petrol-1462cc, 5S)</option>
+                                                          <option>Delta (Petrol-1462cc, 5S)</option>
+                                                          <option>Sigma (Petrol-1462cc, 5S)</option>
+                                                          <option>Zeta (Petrol-1462cc, 5S)</option>
+                                                        </select>
+                                                   </div>
+                                               </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">RTO City</label>
+                                                      <select class="form-select" id="">
+                                                          <option value="">Select RTO City</option>
+                                                          <option>Aizawl-MZ01</option>
+                                                          <option>Aizawl-MZ09</option>
+                                                          <option>Barara-HR54</option>
+                                                          <option>Chatra-JH13</option>
+                                                        </select>
+                                                   </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                   <div class="col-md-10"></div>
+                                                   <div class="col-md-2">
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalconfrimNewcar">
+                                                      Get Quote
+                                                  </button>
+                                                       <!----modal-->
+                                                       <div class="modal fade" id="exampleModalconfrimNewcar" tabindex="-1" aria-labelledby="exampleModallabelconfrimNewcar" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header ">
+                                                              <div class="modal-title" id="staticBackdropLabel">
+                                                                <h5>Confirm Information</h5>
+                                                              </div>
+                                                              <button type="button" class="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body mb-0">
+                                                                <div class="container">
+                                                                   <div class="row">
+                                                                       <form action="">
+                                                                          <label class="mt-3" for="">Registration Date</label>
+                                                                          <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                          <label class="mt-3" for="">Manufacturing Date</label>
+                                                                          <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                          <label class="mt-3" for="">Pervious Policy Expiry Date</label>
+                                                                          <input class="form-control mt-2" type="date" name="" id="" placeholder="">
+                                                                          <p class="mt-2">
+                                                                              <b>Made a claim in your existing policy?</b>
+                                                                          </p>
+                                                                          <p>Disclaimer: No ownership change happend in the 12 months!</p>
+                                                                          <a href="#">
+                                                                              <button class="btn btn-primary w-100">Continue</button>
+                                                                          </a> 
+                                                                       </form>
+                                                                   </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                                      </div>
+                                                       <!----modal end-->
+                                                   </div>
+                                               </div>
+                                            </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                               </div> 
+                              </div>
+                              <!-------------paybike end-->
+                              <div class="hidden" id="buybikeradio">
+                                <div class="container">
+                                  <div class="card p-3 border-0">
+                                      <div class="container">
+                                          <div class="row">
+                                              <form action="">
+                                                  <h6>Provide details below to proceed</h6>
+                                                  <div class="row mb-2">
+                                                      <div class="col-md-6 form-group">
+                                                          <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                                                          <input
+                                                              type="name"
+                                                              class="form-control"
+                                                              id="exampleFormControlInput1"
+                                                              placeholder="Enter Full Name">
+                                                      </div>
+                                                      <div class="col-md-6 form-group">
+                                                          <label for="exampleFormControlInput2" class="form-label">Email address</label>
+                                                          <input
+                                                              type="email"
+                                                              class="form-control"
+                                                              id="exampleFormControlInput2"
+                                                              placeholder="Enter Email Id">
+                                                      </div>
+                                                  </div>
+                                                  <div class="row mb-2">
+                                                      <div class="col-md-6 form-group">
+                                                          <label for="exampleFormControlInput3" class="form-label">Mobile Number *</label>
+                                                          <input
+                                                              type="tel"
+                                                              class="form-control"
+                                                              id="exampleFormControlInput3"
+                                                              placeholder="Enter Mobile Number">
+                                                      </div>
+                                                      <div class="col-md-6 form-group">
+                                                          <label for="exampleFormControlInput3" class="form-label">Date of Birth</label>
+                                                          <input
+                                                              type="date"
+                                                              class="form-control"
+                                                              id="exampleFormControlInput3"
+                                                              placeholder="Select Your Date of Birth">
+                                                      </div>
+                                                  </div>
+                                                  <div class="container text-end">
+                                                      <button type="submit" class="btn btn-primary mt-3 py-2">Submit</button>
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                      <div class="container">
+                        <div class="card">
+                          <form action="" class="py-4 px-3">
+                            <label class="me-2">
+                                <input
+                                    type="radio"
+                                    name="choice3"
+                                    value="yes1"
+                                    id="specifyColor"
+                                    onclick="showDiv3('yes3')">
+                                Pay
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="choice3"
+                                    value="no1"
+                                    id="specifyColor"
+                                    onclick="showDiv3('no3')">
+                                Buy
+                            </label>
+                          </form>
+                          <!-- pay tab -->
+                          <div id="payhomeradio" class="hidden">
+                            <div class="container">
+                              <div class="card p-3 border-0">
+                                  <div class="container">
+                                      <div class="row">
+                                          <form action="">
+                                              <h6>Provide details below to proceed</h6>
+                                              <div class="row mb-2">
+                                                  <div class="col-md-6 form-group">
+                                                      <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                                                      <input
+                                                          type="name"
+                                                          class="form-control"
+                                                          id="exampleFormControlInput1"
+                                                          placeholder="Enter Full Name">
+                                                  </div>
+                                                  <div class="col-md-6 form-group">
+                                                      <label for="exampleFormControlInput2" class="form-label">Email address</label>
+                                                      <input
+                                                          type="email"
+                                                          class="form-control"
+                                                          id="exampleFormControlInput2"
+                                                          placeholder="Enter Email Id">
+                                                  </div>
+                                              </div>
+                                              <div class="row mb-2">
+                                                  <div class="col-md-6 form-group">
+                                                      <label for="exampleFormControlInput3" class="form-label">Mobile Number *</label>
+                                                      <input
+                                                          type="tel"
+                                                          class="form-control"
+                                                          id="exampleFormControlInput3"
+                                                          placeholder="Enter Mobile Number">
+                                                  </div>
+                                                  <div class="col-md-6 form-group">
+                                                      <label for="exampleFormControlInput3" class="form-label">Date of Birth</label>
+                                                      <input
+                                                          type="date"
+                                                          class="form-control"
+                                                          id="exampleFormControlInput3"
+                                                          placeholder="Select Your Date of Birth">
+                                                  </div>
+                                              </div>
+                                              <div class="container text-end">
+                                                  <button type="submit" class="btn btn-primary mt-3 py-2">Continue</button>
+                                              </div>
+                                          </form>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                         <!-- pay tab end -->
+                         <!-- buy tab -->
+                         <div id="buyhomeradio" class="hidden">
+                          <div class="container">
+                            <div class="card p-3 border-0">
+                                <div class="container">
+                                    <div class="row">
+                                        <form action="">
+                                            <h6>Provide details below to proceed</h6>
+                                            <div class="row mb-2">
+                                                <div class="col-md-6 form-group">
+                                                    <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                                                    <input
+                                                        type="name"
+                                                        class="form-control"
+                                                        id="exampleFormControlInput1"
+                                                        placeholder="Enter Full Name">
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label for="exampleFormControlInput2" class="form-label">Email address</label>
+                                                    <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="exampleFormControlInput2"
+                                                        placeholder="Enter Email Id">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-md-6 form-group">
+                                                    <label for="exampleFormControlInput3" class="form-label">Mobile Number *</label>
+                                                    <input
+                                                        type="tel"
+                                                        class="form-control"
+                                                        id="exampleFormControlInput3"
+                                                        placeholder="Enter Mobile Number">
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label for="exampleFormControlInput3" class="form-label">Date of Birth</label>
+                                                    <input
+                                                        type="date"
+                                                        class="form-control"
+                                                        id="exampleFormControlInput3"
+                                                        placeholder="Select Your Date of Birth">
+                                                </div>
+                                            </div>
+                                            <div class="container text-end">
+                                                <button type="submit" class="btn btn-primary mt-3 py-2">Get Quote</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                       <!-- buy tab end -->
+                    </div>
+                      </div>
+                     </div>
+                    <div class="tab-pane fade" id="pills-life" role="tabpanel" aria-labelledby="pills-life-tab" tabindex="0">
+                      <div class="container">
+                        <div class="card">
+                          <form action="" class="py-4 px-3">
+                            <label class="me-2">
+                                <input
+                                    type="radio"
+                                    name="choice4"
+                                    value="yes1"
+                                    id="specifyColor"
+                                    onclick="showDiv4('yes4')">
+                                Pay
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="choice4"
+                                    value="no1"
+                                    id="specifyColor"
+                                    onclick="showDiv4('no4')">
+                                Buy
+                            </label>
+                          </form>
+                          <!-- paylife -->
+                          <div id="payliferadio" class="hidden">
+                            <div class="container-fluid">
+                              <ul class="nav nav-tabs border-bottom-0" id="myTab" role="tablist">
+                                  <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="savingPlan-tab" data-bs-toggle="tab" data-bs-target="#savingPlan-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">saving Plan</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="termLife-tab" data-bs-toggle="tab" data-bs-target="#termLife-tab-pane" type="button" role="tab" aria-controls="termLife-tab-pane" aria-selected="false">Term Life</button>
+                                  </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                  <div class="tab-pane fade show active" id="savingPlan-tab-pane" role="tabpanel" aria-labelledby="savingPlan-tab" tabindex="0">
+                                      <div class="container">
+                                          <form class="g-3 mt-3">
+                                              <div class="row align-items-center">
+                                                <div class="col-md-12">
+                                                    <h6>Or Provide details below to proceed</h6>
+                                                </div>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-md-12 text-end">
+                                                    <button type="button" class="btn btn-outline-danger btn-text shadow bg-white">
+                                                        <i class="bi bi-person-standing"></i>Male
+                                                    </button>
+                                                    <button type="button" class="btn btn-outline-success">
+                                                        <i class="bi bi-person-standing-dress"></i>Female
+                                                    </button>
+                                                </div>
+                                            </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Date of Birth</label>
+                                                      <input
+                                                        type="date"
+                                                        class="form-control"
+                                                        id=""
+                                                        placeholder="Select Your Date of Birth">
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Full Name</label>
+                                                      <input
+                                                      type="text"
+                                                      class="form-control"
+                                                      id=""
+                                                      placeholder="Enter Full Name">
+                                              </div>
+                                                   </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Email address</label>
+                                                      <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id=""
+                                                        placeholder="Enter Email Id">
+                                                   </div> 
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Pin Code</label>
+                                                      <input
+                                                        type="tel"
+                                                        class="form-control"
+                                                        id=""
+                                                        placeholder="Enter Pin Code">
+                                                   </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                   <div class="col-md-11"></div>
+                                                   <div class="col-md-1">
+                                                    <button type="button" class="btn btn-primary">Continue</button>
+                                                   </div>
+                                               </div>
+                                          </form>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="termLife-tab-pane" role="tabpanel" aria-labelledby="termLife-tab" tabindex="0">
+                                    <div class="container">
+                                      <form class="g-3 mt-3">
+                                          <div class="row align-items-center">
+                                            <div class="col-md-12">
+                                                <h6>Or Provide details below to proceed</h6>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12 text-end">
+                                                <button type="button" class="btn btn-outline-danger btn-text shadow bg-white">
+                                                    <i class="bi bi-person-standing"></i>Male
+                                                </button>
+                                                <button type="button" class="btn btn-outline-success">
+                                                    <i class="bi bi-person-standing-dress"></i>Female
+                                                </button>
+                                            </div>
+                                        </div>
+                                           <div class="row my-3">
+                                              <div class="col-md-6">
+                                                  <label for="" class="form-label">Date of Birth</label>
+                                                  <input
+                                                    type="date"
+                                                    class="form-control"
+                                                    id=""
+                                                    placeholder="Select Your Date of Birth">
+                                               </div>
+                                               <div class="col-md-6">
+                                                  <label for="" class="form-label">Full Name</label>
+                                                  <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id=""
+                                                  placeholder="Enter Full Name">
+                                          </div>
+                                               </div>
+                                           <div class="row my-3">
+                                              <div class="col-md-6">
+                                                  <label for="" class="form-label">Email address</label>
+                                                  <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id=""
+                                                    placeholder="Enter Email Id">
+                                               </div> 
+                                               <div class="col-md-6">
+                                                  <label for="" class="form-label">Pin Code</label>
+                                                  <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    id=""
+                                                    placeholder="Enter Pin Code">
+                                               </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                               <div class="col-md-10"></div>
+                                               <div class="col-md-2">
+                                                <button type="button" class="btn btn-primary">Continue</button>
+                                               </div>
+                                           </div>
+                                      </form>
+                                  </div>
+                                  </div>
+                                </div>
+                           </div>  
+                          </div>
+                          <!-- paylife end -->
+                           <!-- buylife -->
+                           <div id="buyliferadio" class="hidden">
+                            <div class="container-fluid">
+                              <ul class="nav nav-tabs border-bottom-0" id="myTab" role="tablist">
+                                  <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="savingPlan-tab" data-bs-toggle="tab" data-bs-target="#savingPlan-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">saving Plan</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="termLife-tab" data-bs-toggle="tab" data-bs-target="#termLife-tab-pane" type="button" role="tab" aria-controls="termLife-tab-pane" aria-selected="false">Term Life</button>
+                                  </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                  <div class="tab-pane fade show active" id="savingPlan-tab-pane" role="tabpanel" aria-labelledby="savingPlan-tab" tabindex="0">
+                                      <div class="container">
+                                          <form class="g-3 mt-3">
+                                              <div class="row align-items-center">
+                                                <div class="col-md-12">
+                                                    <h6>Or Provide details below to proceed</h6>
+                                                </div>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-md-12 text-end">
+                                                    <button type="button" class="btn btn-outline-danger btn-text shadow bg-white">
+                                                        <i class="bi bi-person-standing"></i>Male
+                                                    </button>
+                                                    <button type="button" class="btn btn-outline-success">
+                                                        <i class="bi bi-person-standing-dress"></i>Female
+                                                    </button>
+                                                </div>
+                                            </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Date of Birth</label>
+                                                      <input
+                                                        type="date"
+                                                        class="form-control"
+                                                        id=""
+                                                        placeholder="Select Your Date of Birth">
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Full Name</label>
+                                                      <input
+                                                      type="text"
+                                                      class="form-control"
+                                                      id=""
+                                                      placeholder="Enter Full Name">
+                                              </div>
+                                                   </div>
+                                               <div class="row my-3">
+                                                  <div class="col-md-6">
+                                                      <label for="" class="form-label">Email address</label>
+                                                      <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id=""
+                                                        placeholder="Enter Email Id">
+                                                   </div> 
+                                                   <div class="col-md-6">
+                                                      <label for="" class="form-label">Pin Code</label>
+                                                      <input
+                                                        type="tel"
+                                                        class="form-control"
+                                                        id=""
+                                                        placeholder="Enter Pin Code">
+                                                   </div>
+                                               </div>
+                                               <div class="row mb-3">
+                                                   <div class="col-md-10"></div>
+                                                   <div class="col-md-2">
+                                                    <button type="button" class="btn btn-primary">Continue</button>
+                                                   </div>
+                                               </div>
+                                          </form>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="termLife-tab-pane" role="tabpanel" aria-labelledby="termLife-tab" tabindex="0">
+                                    <div class="container">
+                                      <form class="g-3 mt-3">
+                                          <div class="row align-items-center">
+                                            <div class="col-md-12">
+                                                <h6>Or Provide details below to proceed</h6>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12 text-end">
+                                                <button type="button" class="btn btn-outline-danger btn-text shadow bg-white">
+                                                    <i class="bi bi-person-standing"></i>Male
+                                                </button>
+                                                <button type="button" class="btn btn-outline-success">
+                                                    <i class="bi bi-person-standing-dress"></i>Female
+                                                </button>
+                                            </div>
+                                        </div>
+                                           <div class="row my-3">
+                                              <div class="col-md-6">
+                                                  <label for="" class="form-label">Date of Birth</label>
+                                                  <input
+                                                    type="date"
+                                                    class="form-control"
+                                                    id=""
+                                                    placeholder="Select Your Date of Birth">
+                                               </div>
+                                               <div class="col-md-6">
+                                                  <label for="" class="form-label">Full Name</label>
+                                                  <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id=""
+                                                  placeholder="Enter Full Name">
+                                          </div>
+                                               </div>
+                                           <div class="row my-3">
+                                              <div class="col-md-6">
+                                                  <label for="" class="form-label">Email address</label>
+                                                  <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id=""
+                                                    placeholder="Enter Email Id">
+                                               </div> 
+                                               <div class="col-md-6">
+                                                  <label for="" class="form-label">Pin Code</label>
+                                                  <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    id=""
+                                                    placeholder="Enter Pin Code">
+                                               </div>
+                                           </div>
+                                           <div class="row mb-3">
+                                               <div class="col-md-10"></div>
+                                               <div class="col-md-2">
+                                                <button type="button" class="btn btn-primary">Continue</button>
+                                               </div>
+                                           </div>
+                                      </form>
+                                  </div>
+                                  </div>
+                                </div>
+                           </div>  
+                          </div>
+                          <!-- buylife end -->
+                    </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade text-white" id="pills-health" role="tabpanel" aria-labelledby="pills-health-tab" tabindex="0">
+                      <div class="container">
+                        <div class="card">
+                          <form action="" class="py-4 px-3">
+                            <label class="me-2">
+                                <input
+                                    type="radio"
+                                    name="choice5"
+                                    value="yes1"
+                                    id="specifyColor"
+                                    onclick="showDiv5('yes5')">
+                                Pay
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="choice5"
+                                    value="no1"
+                                    id="specifyColor"
+                                    onclick="showDiv5('no5')">
+                                Buy
+                            </label>
+                          </form>
+                          <!-- paylife -->
+                          <div id="payhealthradio" class="hidden">
+                            <div class="container-fluid">
+                                <div class="container">
+                                  <form class="g-3 mt-3">
+                                      <div class="row align-items-center">
+                                        <div class="col-md-12">
+                                            <h6>Or Provide details below to proceed</h6>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12 text-end">
+                                            <button type="button" class="btn btn-outline-danger btn-text shadow bg-white">
+                                                <i class="bi bi-person-standing"></i>Male
+                                            </button>
+                                            <button type="button" class="btn btn-outline-success">
+                                                <i class="bi bi-person-standing-dress"></i>Female
+                                            </button>
+                                        </div>
+                                    </div>
+                                       <div class="row my-3">
+                                          <div class="col-md-6">
+                                              <label for="" class="form-label">Date of Birth</label>
+                                              <input
+                                                type="date"
+                                                class="form-control"
+                                                id=""
+                                                placeholder="Select Your Date of Birth">
+                                           </div>
+                                           <div class="col-md-6">
+                                              <label for="" class="form-label">Full Name</label>
+                                              <input
+                                              type="text"
+                                              class="form-control"
+                                              id=""
+                                              placeholder="Enter Full Name">
+                                      </div>
+                                           </div>
+                                       <div class="row my-3">
+                                          <div class="col-md-6">
+                                              <label for="" class="form-label">Email address</label>
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id=""
+                                                placeholder="Enter Email Id">
+                                           </div> 
+                                           <div class="col-md-6">
+                                              <label for="" class="form-label">Pin Code</label>
+                                              <input
+                                                type="tel"
+                                                class="form-control"
+                                                id=""
+                                                placeholder="Enter Pin Code">
+                                           </div>
+                                       </div>
+                                       <div class="row mb-3">
+                                           <div class="col-md-10"></div>
+                                           <div class="col-md-2">
+                                            <button type="button" class="btn btn-primary">Continue</button>
+                                           </div>
+                                       </div>
+                                  </form>
+                                 </div>
+                            </div>  
+                          </div>
+                          <!-- paylife end -->
+                           <!-- buylife -->
+                           <div id="buyhealthradio" class="hidden">
+                              <div class="container-fluid">
+                                <div class="container">
+                                    <form class="g-3 mt-3">
+                                        <div class="row align-items-center">
+                                          <div class="col-md-12">
+                                              <h6>Or Provide details below to proceed</h6>
+                                          </div>
+                                        </div>
+                                          <div class="row my-3">
+                                             <div class="col-md-6">
+                                                <label for="" class="form-label">Date of Birth</label>
+                                                <input
+                                                  type="date"
+                                                  class="form-control"
+                                                  id=""
+                                                  placeholder="Select Your Date of Birth">
+                                              </div>
+                                              <div class="col-md-6">
+                                                <label for="" class="form-label">Full Name</label>
+                                                <input
+                                                type="text"
+                                                class="form-control"
+                                                id=""
+                                                placeholder="Enter Full Name">
+                                              </div>
+                                           </div>
+                                          <div class="row my-3">
+                                            <div class="col-md-6">
+                                                <label for="" class="form-label">Email address</label>
+                                                <input
+                                                  type="email"
+                                                  class="form-control"
+                                                  id=""
+                                                  placeholder="Enter Email Id">
+                                              </div> 
+                                              <div class="col-md-6">
+                                                <label for="" class="form-label">Pin Code</label>
+                                                <input
+                                                  type="tel"
+                                                  class="form-control"
+                                                  id=""
+                                                  placeholder="Enter Pin Code">
+                                              </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                              <div class="col-md-10"></div>
+                                              <div class="col-md-2">
+                                              <button type="button" class="btn btn-primary">Continue</button>
+                                              </div>
+                                          </div>
+                                    </form>
+                                </div>
+                              </div>  
+                          </div>
+                          <!-- buylife end -->
+                    </div>
+                      </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+   </section>
+   <script>
+    function showDiv1(choice1) {
+        if (choice1 == 'yes1') {
+            document
+                .getElementById('paycarradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('buycarradio')
+                .style
+                .display = 'none';
+        } else {
+            document
+                .getElementById('buycarradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('paycarradio')
+                .style
+                .display = 'none';
+        }
+    }
+// =============== car tab end=================
+function showDiv2(choice2) {
+        if (choice2 == 'yes2') {
+            document
+                .getElementById('paybikeradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('buybikeradio')
+                .style
+                .display = 'none';
+        } else {
+            document
+                .getElementById('buybikeradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('paybikeradio')
+                .style
+                .display = 'none';
+        }
+    }
+    // =============== bike tab end=================
+    function showDiv3(choice3) {
+        if (choice3 == 'yes3') {
+            document
+                .getElementById('payhomeradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('buyhomeradio')
+                .style
+                .display = 'none';
+        } else {
+            document
+                .getElementById('buyhomeradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('payhomeradio')
+                .style
+                .display = 'none';
+        }
+    }
+    // =============== home tab end=================
+    function showDiv4(choice4) {
+        if (choice4 == 'yes4') {
+            document
+                .getElementById('payliferadio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('buyliferadio')
+                .style
+                .display = 'none';
+        } else {
+            document
+                .getElementById('buyliferadio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('payliferadio')
+                .style
+                .display = 'none';
+        }
+    }
+    // =============== life tab end=================
+    function showDiv5(choice5) {
+        if (choice5 == 'yes5') {
+            document
+                .getElementById('payhealthradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('buyhealthradio')
+                .style
+                .display = 'none';
+        } else {
+            document
+                .getElementById('buyhealthradio')
+                .style
+                .display = 'block';
+            document
+                .getElementById('payhealthradio')
+                .style
+                .display = 'none';
+        }
+    }
+    // =============== health tab end=================
+</script>
+<!-------------Bootstrap js cdn --> 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+ <!-- custome script  -->
+ <script src="script.js"></script>
+  <!-- yes/no radio -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>

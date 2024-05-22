@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--bs-font-family-inter);
+}
+:root,
+[data-bs-theme=light] {
+  --bs-orange:#FF7A2F;
+  --bs-darkNavyblue:#0C2F54;
+  --bs-black:#2C2C2C;
+  --bs-primary-black:#242424;
+  --bs-font-family: "Roboto Condensed", sans-serif;
+  --bs-font-family-inter:"Inter", sans-serif;
+  /* --bs-btn-success:#28A745; */
+}
+.border-primary{
+    border: var(--bs-orange)!important;
+}
+.bg-orange{
+    background-color: var(--bs-orange);
+    width:100vh;
+    height: 100vh;
+}
+.girl-mobile img{
+    margin-top: 2.5rem;
+}
+.login-sub-title{
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: center;
+}
+.login-sub-title{
+    color:var(--bs-darkNavyblue);
+}
+.login-form.form-label{
+font-family:var(--bs-font-family-inter);
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+}
+.login-form label{
+    color:var(--bs-black);
+}
+.form-text small{
+    font-family:var(--bs-font-family-inter);
+font-size: 16px;
+font-weight: 500;
+line-height: 19.36px;
+text-align: right;
+}
+.form-text small{
+    color: var(--bs-orange);
+}
+.btn-primary{
+    background-color: var(--bs-orange)!important;
+    border: 2px solid var(--bs-orange)!important;
+}
+.d-grid button a{
+font-family:var(--bs-font-family-inter);
+font-size: 16px;
+font-weight: 700;
+line-height: 19.36px;
+text-align: center;
+text-decoration: none;
+color:#ffff;
+}
+.btn-text{
+font-family: var(--bs-font-family-inter);
+font-size: 14px;
+font-weight: 400;
+line-height: 16.94px;
+letter-spacing: 0.04em;
+text-align: center;
+
+}
+.btn-text span a{
+    font-family: var(--bs-font-family-inter);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.94px;
+    letter-spacing: 0.04em;
+    text-align: center; 
+    text-decoration: none;
+}
+.btn-text span a{
+    color:var(--bs-orange);
+}
+.btn-text{
+color:var(--bs-primary-black);
+
+}
+/* Opt-verification start here */
+.otp-text{
+font-family: "Poppins", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: center;
+}
+.otp-text{
+    color:var(--bs-darkNavyblue);
+}
+.mobileotp-text{
+    font-family:var(--bs-font-family-inter);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    color:var(--bs-black);   
+}
+.mobile-number{
+font-family: var(--bs-font-family-inter);
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+text-align: center;
+color:var(--bs-darkNavyblue);
+}
+.opt-generator .dot {
+    height: 35px;
+    width: 35px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  /* epos settlement style :start here */
+   .epos-container{
+    color: #0C2F54;
+    font-family: "inter";
+   }
+   h4 .fa-chevron-left:before {
+    content: "\f053";
+    color: #0C2F54!important;
+   }
+  h4 .Settlement-text{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 38px;
+    color: #0C2F54;
+    font-weight: 700;
+    font-family: var(--bs-font-family-inter);
+   }
+.table th, .table td{
+    color: #1B2559;
+    font-family: var(--bs-font-family-inter);
+
+}
+.table tr{
+    border-bottom: mintcream;
+    color: #0C2F54;
+}
+ .table td{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0C2F54;
+    font-family: var(--bs-font-family-inter);
+
+}
+.payout{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--bs-orange)!important;
+    }
+    .btn-outline-primary:hover{
+        background-color: var(--bs-orange)!important;
+        border:2px solid var(--bs-orange)!important;
+        color: #fff!important;
+    }
+    .epos-dot {
+        height: 30px;
+        width: 30px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        background: #F31816;
+        /* padding-top: 8px; */
+      }
+      .bi-trash::before {
+        content: "\f5de";
+        padding-top: 7px;
+        color:#fff;
+    }
+  /* epos settlement style :End/ */
+
+  /* payout :start */
+    #loancard .card-title {
+        font-family: "Poppins";
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #FFFFFF !important;
+    }
+    #loancard .card-text {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0.005em;
+        text-align: left;
+        color: #FFFFFF;
+    }
+    #loancard .recharge a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFFFFF !important;
+    }
+    #loancard .card-text .text-body-secondary {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #FFFFFF !important;
+    }
+    img .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+  /* payout :End */
+
+  /* chart */
+  .skill-container{
+    height:34vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* background-color: #e3edf7; */
+  }
+  .skill{
+      width:160px;
+      height:160px;
+      /* background-color: cornflowerblue; */
+      position: relative;
+      
+  }
+  .outer{
+      width:160px;
+      height:160px;
+      border-radius: 50%;
+      box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                 -6px -6px 10px -1px rgba(255,255,255,0.7);
+      padding: 20px;
+  }
+  .inner{
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                  inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                          -0.5px -0.5px 0px rgba(255,255,255,1),
+                          0.5px 0.5px 0px rgba(0,0,0,0.15),
+                          0px 12px 10px -10px rgba(0,0,0,0.05);
+  }
+  #number{
+      font-weight: 700;
+      color:#555;
+       font-size: 30px;
+  }
+  circle{
+      fill:none;
+      stroke: url(#GradientColor);
+      stroke-width: 20px;
+      stroke-dasharray: 472;
+      stroke-dashoffset:472;
+      animation: circularp 2s linear forwards;
+  }
+  svg{
+      position: absolute;
+      top:0;
+      left:0;
+  }
+  @keyframes circularp{
+      100%{
+          stroke-dashoffset:151.04;
+      }
+  }
+  /* chart end/*/
+
+
+ button.btn.btn-primary.w-100 a{
+     color: #fff;
+     text-decoration: none;
+ }
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content!important;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+
+ /* Emi calculator */
+
+ 
+ #emi-calculation{
+   border: 2px solid steelblue;
+   box-shadow: 2px 5px 5px gray;
+   border-radius: 5px;
+    background-color: #CAFAFE;
+ }
+  #emi-output{
+   border-radius: 5px;
+   margin-top: 15px;
+   padding:5px
+ }
+ .section{
+   margin-left: 10px;
+   font-size: 16px;
+   padding: 10px;
+  font-family:"inter";
+  font-weight: 700;
+ }
+ .result{
+   margin-top: 20px;
+   margin-left: 10px;
+   font-size: 16px;
+   padding: 5px;
+   color:#212529;
+   font-weight:700 ;
+  font-family:"inter";
+ }
+ .input{
+   float: right;
+   height: 30px;
+   margin-right: 10px;
+   border-radius: 4px;
+   padding:10px 10px;
+ }
+  #calc,#reset{
+   font-size: 20px;
+   box-shadow: 2px 5px 5px gray; 
+ }
+ .submit{
+   text-align: center;
+   margin-top: 20px;
+ }
+ #reset{
+   background-color: orange;
+ }
+ @media screen and (max-width: 500px){
+   #border{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     margin-left: 5px;
+     margin-right: 5px;
+   }
+   .label,.result{
+     font-size: 10px;
+   }
+   #title{
+     font-size: 20px;
+   }
+   #emi-calculation{
+     max-width: 100%;
+   }
+   #emi-output{
+     width: 100%;
+     margin-left: 5px;
+     margin-right: 5px;
+   }
+   .section{
+     font-size: 16px;
+   }
+   .input{
+     width: 100px;
+   }
+   #calc, #reset{
+     width: 100px;
+   }
+ }
+
+/* Media queries start here */
+@media only screen and (max-width:392px){
+   .opt-generator .col-md-12{
+    display: inline-flex!important;
+   }
+   .opt-generator .dot {
+    height: 32px;
+    width: 32px;
+    margin-right:3px;
+  }
+}
+@media only screen and (max-width:991px){
+    .bg-orange{
+        background-color: var(--bs-orange);
+        width:100%;
+        height: 100%;
+    }
+    .w-75 {
+        width: 75%!important;
+    }
+}
+
